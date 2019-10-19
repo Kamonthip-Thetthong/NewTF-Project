@@ -12,30 +12,40 @@ namespace NewTF_Project
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        Employee user;
+        public HomePage(Employee user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            bool FormFound = false;
-            foreach (Form form in fc)
+            if(user.employee_position.ToString() == "เจ้าของร้าน")
             {
-                if (form.Name == "emForm1")
+                FormCollection fc = Application.OpenForms;
+                bool FormFound = false;
+                foreach (Form form in fc)
                 {
-                    FormFound = true;
-                    form.Focus();
-                    break;
+                    if (form.Name == "emForm1")
+                    {
+                        FormFound = true;
+                        form.Focus();
+                        break;
+                    }
+                }
+                if (FormFound == false)
+                {
+                    emForm1 employee = new emForm1(this);
+                    employee.MdiParent = this;
+                    employee.Show();
                 }
             }
-            if (FormFound == false)
+            else
             {
-                emForm1 employee = new emForm1();
-                employee.MdiParent = this;
-                employee.Show();
+                MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
             }
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -56,6 +66,18 @@ namespace NewTF_Project
                 memberForm1 employee = new memberForm1();
                 employee.MdiParent = this;
                 employee.Show();
+            }
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            label1.Text = user.employee_user.ToString();
+            label2.Text = user.employee_position.ToString();
+            if(user.employee_position.ToString() == "เจ้าของร้าน")
+            {
+                emForm1 em = new emForm1(this);
+                em.MdiParent = this;
+                em.Show();
             }
         }
     }

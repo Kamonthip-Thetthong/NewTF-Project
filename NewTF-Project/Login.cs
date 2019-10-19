@@ -20,22 +20,29 @@ namespace NewTF_Project
 
         private void Login_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            /*if(e.KeyCode == Keys.Enter)
             {
                 HomePage home = new HomePage();
                 home.Show();
                 this.Hide();
-            }
+            }*/
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 var result = context.Employees
-                    .Where(e => e.)
+                    .Where(em => em.employee_user == textBox1.Text && em.employee_pass == textBox2.Text)
+                    .First();
+
+                HomePage home = new HomePage(result);
+                home.Show();
+                this.Hide();
             }
-            catch { }*/
+            catch {
+                MessageBox.Show("Username หรือ Password ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง");
+            }
         }
     }
 }

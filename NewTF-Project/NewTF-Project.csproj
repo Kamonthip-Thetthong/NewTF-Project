@@ -58,6 +58,12 @@
     <Compile Include="Compose.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="editEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editEm.Designer.cs">
+      <DependentUpon>editEm.cs</DependentUpon>
+    </Compile>
     <Compile Include="emForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEm.Designer.cs">
+      <DependentUpon>AddEm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -114,8 +126,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TFShopDB.edmx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="editEm.resx">
+      <DependentUpon>editEm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="emForm1.resx">
       <DependentUpon>emForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEm.resx">
+      <DependentUpon>AddEm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -136,6 +154,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Employee.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
