@@ -12,6 +12,7 @@ namespace NewTF_Project
 {
     public partial class Login : Form
     {
+        apd621_60011212001Entities context = new apd621_60011212001Entities();
         public Login()
         {
             InitializeComponent();
@@ -25,6 +26,16 @@ namespace NewTF_Project
                 home.Show();
                 this.Hide();
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                var result = context.Employees
+                    .Where(e => e.)
+            }
+            catch { }*/
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="apd621_60011212001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="apd621_60011212001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Compose">
           <Key>
             <PropertyRef Name="compose_id" />
@@ -19,12 +19,14 @@
           </Key>
           <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employee_name" Type="varchar" MaxLength="100" />
-          <Property Name="employee_addr" Type="varchar" MaxLength="200" />
+          <Property Name="employee_addr" Type="varchar(max)" />
           <Property Name="employee_salary" Type="float" />
           <Property Name="employee_date" Type="date" />
           <Property Name="employee_tel" Type="varchar" MaxLength="10" />
           <Property Name="employee_picture" Type="image" />
           <Property Name="employee_position" Type="varchar" MaxLength="50" />
+          <Property Name="employee_user" Type="varchar" MaxLength="50" />
+          <Property Name="employee_pass" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -45,7 +47,7 @@
           <Property Name="product_id" Type="int" Nullable="false" />
           <Property Name="product_name" Type="varchar" MaxLength="100" />
           <Property Name="product_type" Type="varchar" MaxLength="100" />
-          <Property Name="product_datail" Type="varchar" MaxLength="300" />
+          <Property Name="product_datail" Type="varchar(max)" />
           <Property Name="product_picture" Type="image" />
           <Property Name="product_amount" Type="int" />
           <Property Name="product_price" Type="float" />
@@ -57,7 +59,7 @@
           <Property Name="set_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="set_amount" Type="int" />
           <Property Name="set_name" Type="varchar" MaxLength="100" />
-          <Property Name="set_detail" Type="varchar" MaxLength="300" />
+          <Property Name="set_detail" Type="varchar(max)" />
           <Property Name="set_status" Type="bit" />
           <Property Name="set_price" Type="float" />
           <Property Name="set_picture" Type="image" />
@@ -184,8 +186,7 @@
             <End Role="Receipt" EntitySet="Receipt" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="apd621_60011212001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -205,13 +206,15 @@
           </Key>
           <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employee_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="employee_addr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="employee_addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="employee_salary" Type="Double" />
           <Property Name="employee_date" Type="DateTime" Precision="0" />
           <Property Name="employee_tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="employee_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="employee_position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_Employee" FromRole="Employee" ToRole="Receipt" />
+          <Property Name="employee_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="employee_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -233,7 +236,7 @@
           <Property Name="product_id" Type="Int32" Nullable="false" />
           <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="product_datail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="product_datail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="product_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="product_amount" Type="Int32" />
           <Property Name="product_price" Type="Double" />
@@ -247,7 +250,7 @@
           <Property Name="set_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="set_amount" Type="Int32" />
           <Property Name="set_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="set_detail" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="set_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="set_status" Type="Boolean" />
           <Property Name="set_price" Type="Double" />
           <Property Name="set_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
@@ -398,6 +401,8 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="apd621_60011212001Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="employee_pass" ColumnName="employee_pass" />
+                <ScalarProperty Name="employee_user" ColumnName="employee_user" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
                 <ScalarProperty Name="employee_name" ColumnName="employee_name" />
                 <ScalarProperty Name="employee_addr" ColumnName="employee_addr" />
