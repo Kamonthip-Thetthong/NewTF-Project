@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2bce40db76f1482b82568c0f97175e64" Name="Diagram1">
+        <EntityTypeShape EntityType="apd621_60011212001Model.Compose" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Employee" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Member" Width="1.5" PointX="3.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.ProductNew" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.ProductSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Receipt" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductNew" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductSet" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductNew" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductSet" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
