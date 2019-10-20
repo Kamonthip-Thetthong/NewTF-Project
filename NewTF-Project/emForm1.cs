@@ -88,6 +88,7 @@ namespace NewTF_Project
                 context.Employees.Remove(toDel);
                 context.SaveChanges();
                 updateDataSource();
+
             }
             
 
