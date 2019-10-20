@@ -27,6 +27,8 @@ namespace NewTF_Project
         public byte[] member_picture { get; set; }
         public System.DateTime member_date { get; set; }
         public System.DateTime member_birthday { get; set; }
+        public string member_user { get; set; }
+        public string member_pass { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }

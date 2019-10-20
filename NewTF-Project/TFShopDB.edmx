@@ -39,6 +39,8 @@
           <Property Name="member_picture" Type="image" Nullable="false" />
           <Property Name="member_date" Type="date" Nullable="false" />
           <Property Name="member_birthday" Type="date" Nullable="false" />
+          <Property Name="member_user" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="member_pass" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductNew">
           <Key>
@@ -228,6 +230,8 @@
           <Property Name="member_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="member_birthday" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_Member" FromRole="Member" ToRole="Receipt" />
+          <Property Name="member_user" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="member_pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductNew">
           <Key>
@@ -382,8 +386,8 @@
             <End Role="ProductSet" EntitySet="ProductSets" />
             <End Role="Receipt" EntitySet="Receipts" />
           </AssociationSet>
-        </EntityContainer>
-      </Schema>
+          </EntityContainer>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -417,6 +421,8 @@
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="apd621_60011212001Model.Member">
               <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="member_pass" ColumnName="member_pass" />
+                <ScalarProperty Name="member_user" ColumnName="member_user" />
                 <ScalarProperty Name="member_name" ColumnName="member_name" />
                 <ScalarProperty Name="member_id" ColumnName="member_id" />
                 <ScalarProperty Name="member_addr" ColumnName="member_addr" />
