@@ -50,6 +50,8 @@ namespace NewTF_Project
         public void updateDataSource()
         {
             dataGridView1.DataSource = context.Employees.ToList();
+            dataGridView1.Update();
+            dataGridView1.Refresh();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -69,6 +71,26 @@ namespace NewTF_Project
             editEm edit = new editEm(data, this);
             edit.MdiParent = home;
             edit.Show();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            string name = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            DialogResult dialogResult = MessageBox.Show("คุณต้องการไล่ " + name + " ออก ใช่หรือไม่?", "ยืนยันการไล่ออก", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                string username = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+
+                var toDel = context.Employees
+                    .Where(s => s.employee_user == username)
+                    .First();
+
+                context.Employees.Remove(toDel);
+                context.SaveChanges();
+                updateDataSource();
+            }
+            
+
         }
     }
 }

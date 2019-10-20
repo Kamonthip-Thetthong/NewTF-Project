@@ -32,14 +32,12 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = emForm.Location;
+
+            comboBox1.Items.Add("เจ้าของร้าน");
+            comboBox1.Items.Add("พนักงานขายหน้าร้าน");
+            comboBox1.Items.Add("พนักงานคลังสินค้า");
+
             bindingSource1.DataSource = em;
-            var items = context.Employees
-                .Select(s => new { s.employee_position})
-                .Distinct();
-            foreach(var item in items)
-            {
-                comboBox1.Items.Add(item.ToString());
-            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -50,6 +48,7 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             bindingSource1.EndEdit();
             
             int save = context.SaveChanges();
@@ -61,5 +60,19 @@ namespace NewTF_Project
             }
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        public byte[] ImageToByteArray(Image image)
+        {
+            var ms = new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            return ms.ToArray();
+        }
     }
 }
