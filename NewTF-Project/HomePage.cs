@@ -63,7 +63,7 @@ namespace NewTF_Project
             }
             if (FormFound == false)
             {
-                memberForm1 employee = new memberForm1();
+                memberForm1 employee = new memberForm1(this);
                 employee.MdiParent = this;
                 employee.Show();
             }

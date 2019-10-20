@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,17 +14,19 @@ namespace NewTF_Project
     public partial class AddMember : Form
     {
         apd621_60011212001Entities context = new apd621_60011212001Entities();
-        public AddMember()
+        memberForm1 mb;
+        public AddMember(memberForm1 mb)
         {
+            this.mb = mb;
             InitializeComponent();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 var result = context.Members
-                    .Where(m => m. == textBox5.Text).First();
+                    .Where(m => m.member_user == textBox4.Text).First();
 
 
                 MessageBox.Show("username นี้ถูกใช้ไปแล้ว!!!");
@@ -31,39 +34,54 @@ namespace NewTF_Project
             }
             catch
             {
-                Employee newEm = new Employee();
-                newEm.employee_name = textBox1.Text;
-                newEm.employee_addr = textBox2.Text;
-                newEm.employee_tel = textBox3.Text;
-                newEm.employee_salary = float.Parse(textBox4.Text, CultureInfo.InvariantCulture.NumberFormat);
-                newEm.employee_picture = ImageToByteArray(pictureBox1.Image);
-                newEm.employee_date = DateTime.Now.Date;
-                if (radioButton1.Checked)
-                {
-                    newEm.employee_position = "เจ้าของร้าน";
-                }
-                else if (radioButton2.Checked)
-                {
-                    newEm.employee_position = "พนักงานขายหน้าร้าน";
-                }
-                else if (radioButton3.Checked)
-                {
-                    newEm.employee_position = "พนักงานคลังสินค้า";
-                }
-                newEm.employee_user = textBox5.Text;
-                newEm.employee_pass = textBox6.Text;
+                Member member = new Member();
+                member.member_name = textBox1.Text;
+                member.member_tel = textBox2.Text;
+                member.member_addr = textBox3.Text;
+                member.member_picture = ImageToByteArray(pictureBox1.Image);
+                member.member_birthday = dateTimePicker1.Value.Date;
+                member.member_date = DateTime.Now.Date;
+                member.member_user = textBox4.Text;
+                member.member_pass = textBox5.Text;
 
-                context.Employees.Add(newEm);
+                context.Members.Add(member);
 
                 int add = context.SaveChanges();
                 if (add > 0)
                 {
-                    MessageBox.Show("เพิ่มพนักงานเรียบร้อย");
-                    em.updateDataSource();
+                    MessageBox.Show("สมัครสมาชิกเรียบร้อย");
+                    mb.updateDataSource();
                     this.Close();
                 }
 
-            }*/
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            var ms = new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            return ms.ToArray();
+        }
+
+        private void AddMember_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Location = mb.Location;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            mb.updateDataSource();
+            this.Close();
         }
     }
 }
