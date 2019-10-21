@@ -49,7 +49,7 @@
           <Property Name="product_id" Type="int" Nullable="false" />
           <Property Name="product_name" Type="varchar" MaxLength="100" />
           <Property Name="product_type" Type="varchar" MaxLength="100" />
-          <Property Name="product_datail" Type="varchar(max)" />
+          <Property Name="product_detail" Type="varchar(max)" />
           <Property Name="product_picture" Type="image" />
           <Property Name="product_amount" Type="int" />
           <Property Name="product_price" Type="float" />
@@ -246,6 +246,7 @@
           <Property Name="product_price" Type="Double" />
           <NavigationProperty Name="Composes" Relationship="Self.FK_Compose_ProductNew" FromRole="ProductNew" ToRole="Compose" />
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_ProductNew" FromRole="ProductNew" ToRole="Receipt" />
+          <Property Name="product_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductSet">
           <Key>
@@ -436,10 +437,10 @@
           <EntitySetMapping Name="ProductNews">
             <EntityTypeMapping TypeName="apd621_60011212001Model.ProductNew">
               <MappingFragment StoreEntitySet="ProductNew">
+                <ScalarProperty Name="product_detail" ColumnName="product_detail" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_type" ColumnName="product_type" />
-                <ScalarProperty Name="product_datail" ColumnName="product_datail" />
                 <ScalarProperty Name="product_picture" ColumnName="product_picture" />
                 <ScalarProperty Name="product_amount" ColumnName="product_amount" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />

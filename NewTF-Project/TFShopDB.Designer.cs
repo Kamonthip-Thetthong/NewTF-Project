@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\GuitarThanapol\Source\Repos\Kamonthip-Thetthong\NewTF-Project\NewTF-Project\TFShopDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\MyDrive\APD\NewTF-Project\NewTF-Project\TFShopDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
