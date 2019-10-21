@@ -24,6 +24,7 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             dataGridView1.DataSource = context.Employees.ToList();
+            /*MessageBox.Show("Location = "+this.Location);*/
         }
 
         private void Button1_Click(object sender, EventArgs e)

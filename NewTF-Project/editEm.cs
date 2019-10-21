@@ -48,7 +48,7 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            em.employee_picture = ImageToByteArray(pictureBox1.Image);
             bindingSource1.EndEdit();
             
             int save = context.SaveChanges();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,12 +74,20 @@ namespace NewTF_Project
         {
             label1.Text = user.employee_user.ToString();
             label2.Text = user.employee_position.ToString();
+            pictureBox1.Image = byteArrayToImage(user.employee_picture);
             if(user.employee_position.ToString() == "เจ้าของร้าน")
             {
                 emForm1 em = new emForm1(this);
                 em.MdiParent = this;
                 em.Show();
             }
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
     }
 }
