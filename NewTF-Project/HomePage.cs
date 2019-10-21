@@ -51,22 +51,29 @@ namespace NewTF_Project
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            bool FormFound = false;
-            foreach (Form form in fc)
+            if (user.employee_position.ToString() == "เจ้าของร้าน" || user.employee_position.ToString() == "พนักงานขายหน้าร้าน")
             {
-                if (form.Name == "memberForm1")
+                FormCollection fc = Application.OpenForms;
+                bool FormFound = false;
+                foreach (Form form in fc)
                 {
-                    FormFound = true;
-                    form.Focus();
-                    break;
+                    if (form.Name == "memberForm1")
+                    {
+                        FormFound = true;
+                        form.Focus();
+                        break;
+                    }
+                }
+                if (FormFound == false)
+                {
+                    memberForm1 employee = new memberForm1(this);
+                    employee.MdiParent = this;
+                    employee.Show();
                 }
             }
-            if (FormFound == false)
+            else
             {
-                memberForm1 employee = new memberForm1(this);
-                employee.MdiParent = this;
-                employee.Show();
+                MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
             }
         }
 
@@ -88,6 +95,34 @@ namespace NewTF_Project
             MemoryStream ms = new MemoryStream(byteArrayIn);
             Image returnImage = Image.FromStream(ms);
             return returnImage;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if(user.employee_position.ToString() == "เจ้าของร้าน" || user.employee_position.ToString() == "พนักงานคลังสินค้า")
+            {
+                FormCollection fc = Application.OpenForms;
+                bool FormFound = false;
+                foreach (Form form in fc)
+                {
+                    if (form.Name == "proForm1")
+                    {
+                        FormFound = true;
+                        form.Focus();
+                        break;
+                    }
+                }
+                if (FormFound == false)
+                {
+                    proForm1 pro = new proForm1();
+                    pro.MdiParent = this;
+                    pro.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
+            }
         }
     }
 }

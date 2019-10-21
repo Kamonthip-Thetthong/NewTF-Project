@@ -12,8 +12,6 @@ namespace NewTF_Project
 {
     public partial class proForm1 : Form
     {
-        apd621_60011212001Entities context = new apd621_60011212001Entities();
-        
         public proForm1()
         {
             InitializeComponent();
@@ -22,11 +20,9 @@ namespace NewTF_Project
         private void ProForm1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-        }
+            this.Location = new Point(0, 0);
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
+
         }
     }
 }
