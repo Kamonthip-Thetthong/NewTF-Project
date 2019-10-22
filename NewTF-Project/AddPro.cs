@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,10 @@ namespace NewTF_Project
     public partial class AddPro : Form
     {
         apd621_60011212001Entities context = new apd621_60011212001Entities();
-        public AddPro()
+        proForm1 pro;
+        public AddPro(proForm1 pro)
         {
+            this.pro = pro;
             InitializeComponent();
         }
 
@@ -59,8 +62,32 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            /*ProductNew product = new ProductNew();
-            *//*product.product_id = */
+            ProductNew product = new ProductNew();
+
+            product.product_id = int.Parse(textBox2.Text);
+            product.product_name = textBox3.Text;
+            product.product_detail = textBox4.Text;
+            product.product_type = textBox5.Text;
+            product.product_price = float.Parse(textBox6.Text);
+            product.product_amount = Decimal.ToInt32(numericUpDown1.Value);
+            product.product_picture = ImageToByteArray(pictureBox1.Image);
+
+            context.ProductNews.Add(product);
+            int add = context.SaveChanges();
+            if (add > 0)
+            {
+                MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
+                pro.updateDataSorce();
+                this.Close();
+            }
+
+        }
+
+        public byte[] ImageToByteArray(Image image)
+        {
+            var ms = new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            return ms.ToArray();
         }
     }
 }
