@@ -49,10 +49,19 @@ namespace NewTF_Project
 
             var tp = html2.Where(p => p.GetAttributeValue("class", "") == "step_nav")
                 .First();
-            tp = tp.Descendants("a")
-                .Where(n => n.GetAttributeValue("title", "") != "Home").First();
-            var type = tp.GetAttributeValue("title", "");
-            textBox5.Text = type.ToString();
+            var types = tp.Descendants("a")
+                .Where(n => n.GetAttributeValue("title", "") != "Home").ToList();
+            /*var type = tp.GetAttributeValue("title", "");*/
+            var i = 0;
+            foreach(var type in types)
+            {
+                if(i == 1)
+                {
+                    textBox5.Text = type.GetAttributeValue("title", "").ToString();
+                    break;
+                }
+                i += 1;
+            }
 
             var pic = html.Where(t => t.GetAttributeValue("name", "") == "twitter:image").First();
             string url1 = pic.GetAttributeValue("content", "").ToString();
@@ -88,6 +97,11 @@ namespace NewTF_Project
             var ms = new MemoryStream();
             image.Save(ms, image.RawFormat);
             return ms.ToArray();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

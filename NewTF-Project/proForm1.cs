@@ -37,7 +37,26 @@ namespace NewTF_Project
 
         public void updateDataSorce()
         {
-            dataGridView1.DataSource = context.ProductNews.ToList();
+            apd621_60011212001Entities context2 = new apd621_60011212001Entities();
+            dataGridView1.DataSource = context2.ProductNews.ToList();
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = context.ProductNews
+                .Where(p => p.product_id.ToString().Contains(textBox1.Text) ||
+                p.product_name.ToString().Contains(textBox1.Text) ||
+                p.product_detail.ToString().Contains(textBox1.Text) ||
+                p.product_type.ToString().Contains(textBox1.Text))
+                .ToList();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string data = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            editPro edit = new editPro(this, data);
+            edit.MdiParent = home;
+            edit.Show();
         }
     }
 }

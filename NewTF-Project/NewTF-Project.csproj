@@ -85,6 +85,12 @@
     <Compile Include="EditMember.Designer.cs">
       <DependentUpon>EditMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="editPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editPro.Designer.cs">
+      <DependentUpon>editPro.cs</DependentUpon>
+    </Compile>
     <Compile Include="emForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditMember.resx">
       <DependentUpon>EditMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editPro.resx">
+      <DependentUpon>editPro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="emForm1.resx">
       <DependentUpon>emForm1.cs</DependentUpon>

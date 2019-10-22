@@ -50,9 +50,8 @@ namespace NewTF_Project
 
         public void updateDataSource()
         {
-            dataGridView1.DataSource = context.Employees.ToList();
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            apd621_60011212001Entities context2 = new apd621_60011212001Entities();
+            dataGridView1.DataSource = context2.Employees.ToList();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
