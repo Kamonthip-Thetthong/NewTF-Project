@@ -37,18 +37,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.productNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productdatailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productpictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.productamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.composesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receiptsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -132,6 +129,7 @@
             this.button2.TabIndex = 32;
             this.button2.Text = "นำเข้าสินค้าใหม่";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // dataGridView1
             // 
@@ -142,13 +140,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productidDataGridViewTextBoxColumn,
             this.productnameDataGridViewTextBoxColumn,
+            this.product_detail,
             this.producttypeDataGridViewTextBoxColumn,
-            this.productdatailDataGridViewTextBoxColumn,
-            this.productpictureDataGridViewImageColumn,
             this.productamountDataGridViewTextBoxColumn,
-            this.productpriceDataGridViewTextBoxColumn,
-            this.composesDataGridViewTextBoxColumn,
-            this.receiptsDataGridViewTextBoxColumn});
+            this.productpriceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productNewBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(8, 58);
             this.dataGridView1.Name = "dataGridView1";
@@ -158,6 +153,64 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(876, 418);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // productidDataGridViewTextBoxColumn
+            // 
+            this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
+            this.productidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.productidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
+            this.productidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productnameDataGridViewTextBoxColumn
+            // 
+            this.productnameDataGridViewTextBoxColumn.DataPropertyName = "product_name";
+            this.productnameDataGridViewTextBoxColumn.HeaderText = "ชื่อสินค้า";
+            this.productnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
+            this.productnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productnameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // product_detail
+            // 
+            this.product_detail.DataPropertyName = "product_detail";
+            this.product_detail.HeaderText = "รายละเอียด";
+            this.product_detail.MinimumWidth = 6;
+            this.product_detail.Name = "product_detail";
+            this.product_detail.ReadOnly = true;
+            this.product_detail.Width = 300;
+            // 
+            // producttypeDataGridViewTextBoxColumn
+            // 
+            this.producttypeDataGridViewTextBoxColumn.DataPropertyName = "product_type";
+            this.producttypeDataGridViewTextBoxColumn.HeaderText = "ประเภท";
+            this.producttypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.producttypeDataGridViewTextBoxColumn.Name = "producttypeDataGridViewTextBoxColumn";
+            this.producttypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.producttypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productamountDataGridViewTextBoxColumn
+            // 
+            this.productamountDataGridViewTextBoxColumn.DataPropertyName = "product_amount";
+            this.productamountDataGridViewTextBoxColumn.HeaderText = "คงเหลือ";
+            this.productamountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productamountDataGridViewTextBoxColumn.Name = "productamountDataGridViewTextBoxColumn";
+            this.productamountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productamountDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // productpriceDataGridViewTextBoxColumn
+            // 
+            this.productpriceDataGridViewTextBoxColumn.DataPropertyName = "product_price";
+            this.productpriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
+            this.productpriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productpriceDataGridViewTextBoxColumn.Name = "productpriceDataGridViewTextBoxColumn";
+            this.productpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productpriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productNewBindingSource
+            // 
+            this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
             // 
             // tabPage2
             // 
@@ -178,91 +231,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "เซ็ตสินค้าที่ยังไม่ผ่านการอนุมัติ";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // productNewBindingSource
-            // 
-            this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
-            // 
-            // productidDataGridViewTextBoxColumn
-            // 
-            this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
-            this.productidDataGridViewTextBoxColumn.HeaderText = "product_id";
-            this.productidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
-            this.productidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // productnameDataGridViewTextBoxColumn
-            // 
-            this.productnameDataGridViewTextBoxColumn.DataPropertyName = "product_name";
-            this.productnameDataGridViewTextBoxColumn.HeaderText = "product_name";
-            this.productnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
-            this.productnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productnameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // producttypeDataGridViewTextBoxColumn
-            // 
-            this.producttypeDataGridViewTextBoxColumn.DataPropertyName = "product_type";
-            this.producttypeDataGridViewTextBoxColumn.HeaderText = "product_type";
-            this.producttypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.producttypeDataGridViewTextBoxColumn.Name = "producttypeDataGridViewTextBoxColumn";
-            this.producttypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.producttypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // productdatailDataGridViewTextBoxColumn
-            // 
-            this.productdatailDataGridViewTextBoxColumn.DataPropertyName = "product_datail";
-            this.productdatailDataGridViewTextBoxColumn.HeaderText = "product_datail";
-            this.productdatailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productdatailDataGridViewTextBoxColumn.Name = "productdatailDataGridViewTextBoxColumn";
-            this.productdatailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productdatailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // productpictureDataGridViewImageColumn
-            // 
-            this.productpictureDataGridViewImageColumn.DataPropertyName = "product_picture";
-            this.productpictureDataGridViewImageColumn.HeaderText = "product_picture";
-            this.productpictureDataGridViewImageColumn.MinimumWidth = 6;
-            this.productpictureDataGridViewImageColumn.Name = "productpictureDataGridViewImageColumn";
-            this.productpictureDataGridViewImageColumn.ReadOnly = true;
-            this.productpictureDataGridViewImageColumn.Width = 125;
-            // 
-            // productamountDataGridViewTextBoxColumn
-            // 
-            this.productamountDataGridViewTextBoxColumn.DataPropertyName = "product_amount";
-            this.productamountDataGridViewTextBoxColumn.HeaderText = "product_amount";
-            this.productamountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productamountDataGridViewTextBoxColumn.Name = "productamountDataGridViewTextBoxColumn";
-            this.productamountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productamountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // productpriceDataGridViewTextBoxColumn
-            // 
-            this.productpriceDataGridViewTextBoxColumn.DataPropertyName = "product_price";
-            this.productpriceDataGridViewTextBoxColumn.HeaderText = "product_price";
-            this.productpriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productpriceDataGridViewTextBoxColumn.Name = "productpriceDataGridViewTextBoxColumn";
-            this.productpriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productpriceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // composesDataGridViewTextBoxColumn
-            // 
-            this.composesDataGridViewTextBoxColumn.DataPropertyName = "Composes";
-            this.composesDataGridViewTextBoxColumn.HeaderText = "Composes";
-            this.composesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.composesDataGridViewTextBoxColumn.Name = "composesDataGridViewTextBoxColumn";
-            this.composesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.composesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // receiptsDataGridViewTextBoxColumn
-            // 
-            this.receiptsDataGridViewTextBoxColumn.DataPropertyName = "Receipts";
-            this.receiptsDataGridViewTextBoxColumn.HeaderText = "Receipts";
-            this.receiptsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.receiptsDataGridViewTextBoxColumn.Name = "receiptsDataGridViewTextBoxColumn";
-            this.receiptsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.receiptsDataGridViewTextBoxColumn.Width = 125;
             // 
             // proForm1
             // 
@@ -297,15 +265,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productdatailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productNewBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn productidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_detail;
         private System.Windows.Forms.DataGridViewTextBoxColumn producttypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productdatailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn productpictureDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productpriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn composesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn receiptsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productNewBindingSource;
     }
 }

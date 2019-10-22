@@ -114,7 +114,7 @@ namespace NewTF_Project
                 }
                 if (FormFound == false)
                 {
-                    proForm1 pro = new proForm1();
+                    proForm1 pro = new proForm1(this);
                     pro.MdiParent = this;
                     pro.Show();
                 }

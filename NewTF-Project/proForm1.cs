@@ -12,8 +12,10 @@ namespace NewTF_Project
 {
     public partial class proForm1 : Form
     {
-        public proForm1()
+        HomePage home;
+        public proForm1(HomePage home)
         {
+            this.home = home;
             InitializeComponent();
         }
 
@@ -23,6 +25,13 @@ namespace NewTF_Project
             this.Location = new Point(0, 0);
 
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            AddPro add = new AddPro();
+            add.MdiParent = home;
+            add.Show();
         }
     }
 }
