@@ -58,5 +58,13 @@ namespace NewTF_Project
             edit.MdiParent = home;
             edit.Show();
         }
+
+        private void DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string data = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            showPro show = new showPro(data);
+            show.MdiParent = home;
+            show.Show();
+        }
     }
 }

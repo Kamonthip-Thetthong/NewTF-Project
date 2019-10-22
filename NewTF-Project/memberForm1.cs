@@ -49,9 +49,8 @@ namespace NewTF_Project
 
         public void updateDataSource()
         {
-            memberBindingSource.DataSource = context.Members.ToList();
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            apd621_60011212001Entities context2 = new apd621_60011212001Entities();
+            memberBindingSource.DataSource = context2.Members.ToList();
         }
 
         private void Button2_Click(object sender, EventArgs e)

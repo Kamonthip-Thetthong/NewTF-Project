@@ -150,6 +150,12 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="showPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showPro.Designer.cs">
+      <DependentUpon>showPro.cs</DependentUpon>
+    </Compile>
     <Compile Include="TFShopDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +216,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="showPro.resx">
+      <DependentUpon>showPro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Employee.datasource" />
     <None Include="Properties\DataSources\Member.datasource" />
