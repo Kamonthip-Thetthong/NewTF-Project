@@ -24,7 +24,6 @@ namespace NewTF_Project
         public int product_id { get; set; }
         public string product_name { get; set; }
         public string product_type { get; set; }
-        public string product_datail { get; set; }
         public byte[] product_picture { get; set; }
         public Nullable<int> product_amount { get; set; }
         public Nullable<double> product_price { get; set; }
