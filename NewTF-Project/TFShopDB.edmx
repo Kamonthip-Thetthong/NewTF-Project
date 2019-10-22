@@ -240,7 +240,6 @@
           <Property Name="product_id" Type="Int32" Nullable="false" />
           <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="product_datail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="product_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="product_amount" Type="Int32" />
           <Property Name="product_price" Type="Double" />
