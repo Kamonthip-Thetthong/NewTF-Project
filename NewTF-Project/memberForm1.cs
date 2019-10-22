@@ -53,5 +53,42 @@ namespace NewTF_Project
             dataGridView1.Update();
             dataGridView1.Refresh();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            string name = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            DialogResult dialogResult = MessageBox.Show("คุณต้องการลบ " + name + " ออก ใช่หรือไม่?", "ยืนยันการลบ", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string username = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+
+                var toDel = context.Members
+                    .Where(s => s.member_user == username)
+                    .First();
+
+                context.Members.Remove(toDel);
+                context.SaveChanges();
+                updateDataSource();
+
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            string data = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            EditMember edit = new EditMember(data, this);
+            edit.MdiParent = home;
+            edit.Show();
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = context.Members
+                .Where(p => p.member_name.Contains(textBox1.Text) ||
+                p.member_addr.Contains(textBox1.Text) ||
+                p.member_tel.Contains(textBox1.Text) ||
+                p.member_user.Contains(textBox1.Text))
+                .ToList();
+        }
     }
 }
