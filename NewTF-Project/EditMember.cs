@@ -29,7 +29,7 @@ namespace NewTF_Project
         private void EditMember_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Location = mbForm.Location;
+            this.Location = new Point(0, 0);
             memberBindingSource.DataSource = member;
         }
 

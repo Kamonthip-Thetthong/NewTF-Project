@@ -23,6 +23,7 @@ namespace NewTF_Project
         private void MemberForm1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
+            this.Location = new Point(0, 0);
             memberBindingSource.DataSource = context.Members.ToList();
         }
 

@@ -44,8 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,7 +76,7 @@
             // 
             this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "product_amount", true));
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(565, 418);
+            this.numericUpDown1.Location = new System.Drawing.Point(576, 417);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -96,7 +96,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(443, 420);
+            this.label9.Location = new System.Drawing.Point(454, 419);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 25);
             this.label9.TabIndex = 37;
@@ -106,9 +106,9 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.bindingSource1, "product_picture", true));
-            this.pictureBox1.Location = new System.Drawing.Point(226, 190);
+            this.pictureBox1.Location = new System.Drawing.Point(163, 154);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.Size = new System.Drawing.Size(233, 230);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
@@ -117,7 +117,7 @@
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "product_detail", true));
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(539, 187);
+            this.textBox4.Location = new System.Drawing.Point(576, 186);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -128,7 +128,7 @@
             // 
             this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "product_price", true));
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(539, 369);
+            this.textBox6.Location = new System.Drawing.Point(576, 368);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(288, 30);
@@ -138,7 +138,7 @@
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "product_type", true));
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(539, 333);
+            this.textBox5.Location = new System.Drawing.Point(576, 332);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(288, 30);
@@ -148,7 +148,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(443, 372);
+            this.label7.Location = new System.Drawing.Point(454, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 25);
             this.label7.TabIndex = 25;
@@ -158,7 +158,7 @@
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "product_name", true));
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(539, 151);
+            this.textBox3.Location = new System.Drawing.Point(576, 150);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(288, 30);
@@ -169,7 +169,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(443, 336);
+            this.label6.Location = new System.Drawing.Point(454, 335);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 25);
             this.label6.TabIndex = 26;
@@ -179,7 +179,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(443, 190);
+            this.label5.Location = new System.Drawing.Point(454, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 27;
@@ -189,7 +189,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(443, 154);
+            this.label4.Location = new System.Drawing.Point(454, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 28;
@@ -200,7 +200,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(443, 120);
+            this.label3.Location = new System.Drawing.Point(454, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 25);
             this.label3.TabIndex = 29;
@@ -210,15 +210,11 @@
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "product_id", true));
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(539, 115);
+            this.textBox2.Location = new System.Drawing.Point(576, 114);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(288, 30);
             this.textBox2.TabIndex = 34;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(NewTF_Project.ProductNew);
             // 
             // button1
             // 
@@ -231,6 +227,10 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "ย้อนกลับ";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(NewTF_Project.ProductNew);
             // 
             // showPro
             // 

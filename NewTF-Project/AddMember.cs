@@ -67,7 +67,7 @@ namespace NewTF_Project
         private void AddMember_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Location = mb.Location;
+            this.Location = new Point(0, 0);
         }
 
         private void Button1_Click(object sender, EventArgs e)
