@@ -76,7 +76,7 @@ namespace NewTF_Project
         private void Button3_Click(object sender, EventArgs e)
         {
             string name = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            DialogResult dialogResult = MessageBox.Show("คุณต้องการไล่ " + name + " ออก ใช่หรือไม่?", "ยืนยันการไล่ออก", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("คุณต้องการลบ " + name + " ออก ใช่หรือไม่?", "ยืนยันการไล่ออก", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
                 string username = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();

@@ -35,18 +35,19 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.product_detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -120,6 +122,19 @@
             this.textBox1.Size = new System.Drawing.Size(352, 34);
             this.textBox1.TabIndex = 33;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("KodchiangUPC", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(887, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 40);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "แก้ไขสินค้า";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -159,48 +174,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentDoubleClick);
             // 
-            // product_detail
-            // 
-            this.product_detail.DataPropertyName = "product_detail";
-            this.product_detail.HeaderText = "รายละเอียด";
-            this.product_detail.MinimumWidth = 6;
-            this.product_detail.Name = "product_detail";
-            this.product_detail.ReadOnly = true;
-            this.product_detail.Width = 300;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1047, 495);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "เซ็ตสินค้าที่ผ่านการอนุมัติแล้ว";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1047, 495);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "เซ็ตสินค้าที่ยังไม่ผ่านการอนุมัติ";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("KodchiangUPC", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(887, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 40);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "แก้ไขสินค้า";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // productidDataGridViewTextBoxColumn
             // 
             this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
@@ -218,6 +191,15 @@
             this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
             this.productnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.productnameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // product_detail
+            // 
+            this.product_detail.DataPropertyName = "product_detail";
+            this.product_detail.HeaderText = "รายละเอียด";
+            this.product_detail.MinimumWidth = 6;
+            this.product_detail.Name = "product_detail";
+            this.product_detail.ReadOnly = true;
+            this.product_detail.Width = 300;
             // 
             // producttypeDataGridViewTextBoxColumn
             // 
@@ -249,6 +231,40 @@
             // productNewBindingSource
             // 
             this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1047, 495);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "เซ็ตสินค้าที่ผ่านการอนุมัติแล้ว";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1047, 495);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "เซ็ตสินค้าที่ยังไม่ผ่านการอนุมัติ";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Maroon;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("KodchiangUPC", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(890, 436);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(154, 40);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "ลบสินค้า";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // proForm1
             // 
@@ -292,5 +308,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

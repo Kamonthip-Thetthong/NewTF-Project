@@ -70,5 +70,22 @@ namespace NewTF_Project
             show.MdiParent = home;
             show.Show();
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            string data = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            var result = context.ProductNews
+                .Where(p => p.product_id.ToString() == data)
+                .First();
+
+            DialogResult dialogResult = MessageBox.Show("คุณต้องการลบสินค้านี้ออก ใช่หรือไม่?", "ยืนยันการไล่ออก", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                result.product_status = 0;
+                context.SaveChanges();
+                MessageBox.Show("ลบเรียบร้อย");
+                updateDataSorce();
+            }
+        }
     }
 }
