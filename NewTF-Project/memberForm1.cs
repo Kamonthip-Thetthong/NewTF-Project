@@ -78,7 +78,7 @@ namespace NewTF_Project
             string data = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             EditMember edit = new EditMember(data, this);
             edit.MdiParent = home;
-            edit.Show();
+            edit.Show(); 
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
