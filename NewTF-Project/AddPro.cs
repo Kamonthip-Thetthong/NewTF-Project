@@ -80,6 +80,7 @@ namespace NewTF_Project
             product.product_price = float.Parse(textBox6.Text);
             product.product_amount = Decimal.ToInt32(numericUpDown1.Value);
             product.product_picture = ImageToByteArray(pictureBox1.Image);
+            product.product_status = 1;
 
             context.ProductNews.Add(product);
             int add = context.SaveChanges();

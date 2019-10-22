@@ -24,7 +24,9 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = new Point(0, 0);
-            dataGridView1.DataSource = context.ProductNews.ToList();
+            dataGridView1.DataSource = context.ProductNews
+                .Where(p => p.product_status == 1)
+                .ToList();
 
         }
 
@@ -38,7 +40,9 @@ namespace NewTF_Project
         public void updateDataSorce()
         {
             apd621_60011212001Entities context2 = new apd621_60011212001Entities();
-            dataGridView1.DataSource = context2.ProductNews.ToList();
+            dataGridView1.DataSource = context2.ProductNews
+                .Where(p => p.product_status == 1)
+                .ToList();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)

@@ -28,6 +28,7 @@ namespace NewTF_Project
         public Nullable<int> product_amount { get; set; }
         public Nullable<double> product_price { get; set; }
         public string product_detail { get; set; }
+        public Nullable<int> product_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compose> Composes { get; set; }
