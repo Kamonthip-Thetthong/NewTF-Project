@@ -75,7 +75,7 @@ namespace NewTF_Project
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            string data = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            string data = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             EditMember edit = new EditMember(data, this);
             edit.MdiParent = home;
             edit.Show(); 

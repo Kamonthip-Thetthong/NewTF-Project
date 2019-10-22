@@ -30,7 +30,7 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = mbForm.Location;
-            bindingSource1.DataSource = member;
+            memberBindingSource.DataSource = member;
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace NewTF_Project
         private void Button2_Click(object sender, EventArgs e)
         {
             member.member_picture = ImageToByteArray(pictureBox1.Image);
-            bindingSource1.EndEdit();
+            memberBindingSource.EndEdit();
 
             int save = context.SaveChanges();
             if (save > 0)

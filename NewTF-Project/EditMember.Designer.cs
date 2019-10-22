@@ -50,10 +50,12 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.memberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -82,7 +84,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.memberBindingSource, "member_pass", true));
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberBindingSource, "member_pass", true));
             this.textBox5.Font = new System.Drawing.Font("Quark", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textBox5.Location = new System.Drawing.Point(409, 334);
             this.textBox5.Name = "textBox5";
@@ -101,7 +103,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.memberBindingSource, "member_user", true));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberBindingSource, "member_user", true));
             this.textBox4.Font = new System.Drawing.Font("Quark", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textBox4.Location = new System.Drawing.Point(409, 288);
             this.textBox4.Name = "textBox4";
@@ -250,6 +252,10 @@
             // 
             this.memberBindingSource.DataSource = typeof(NewTF_Project.Member);
             // 
+            // memberBindingSource1
+            // 
+            this.memberBindingSource1.DataSource = typeof(NewTF_Project.Member);
+            // 
             // EditMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +286,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +315,6 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource memberBindingSource;
+        private System.Windows.Forms.BindingSource memberBindingSource1;
     }
 }
