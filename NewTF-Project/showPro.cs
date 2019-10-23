@@ -29,5 +29,10 @@ namespace NewTF_Project
                 .Where(p => p.product_id.ToString() == data)
                 .First();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
