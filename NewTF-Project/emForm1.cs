@@ -24,7 +24,10 @@ namespace NewTF_Project
         private void EmForm1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            dataGridView1.DataSource = context.Employees.ToList();
+            var emp = context.Employees
+                .Where(p => p.employee_status == 1)
+                .ToList();
+            dataGridView1.DataSource = emp;
             label2.Left = (this.Width - label2.Width) / 2;
 
             string name = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
@@ -68,7 +71,7 @@ namespace NewTF_Project
         public void updateDataSource()
         {
             apd621_60011212001Entities context2 = new apd621_60011212001Entities();
-            dataGridView1.DataSource = context2.Employees.ToList();
+            dataGridView1.DataSource = context2.Employees.Where(p => p.employee_status == 1).ToList();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -78,7 +81,8 @@ namespace NewTF_Project
                 p.employee_addr.Contains(textBox1.Text) ||
                 p.employee_tel.Contains(textBox1.Text) ||
                 p.employee_position.Contains(textBox1.Text) ||
-                p.employee_user.Contains(textBox1.Text))
+                p.employee_user.Contains(textBox1.Text) &&
+                p.employee_status == 1)
                 .ToList();
         }
 
@@ -102,7 +106,8 @@ namespace NewTF_Project
                     .Where(s => s.employee_user == username)
                     .First();
 
-                context.Employees.Remove(toDel);
+                //context.Employees.Remove(toDel);
+                toDel.employee_status = 0;
                 context.SaveChanges();
                 updateDataSource();
 

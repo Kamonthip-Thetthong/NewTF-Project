@@ -78,7 +78,7 @@ namespace NewTF_Project
                 }
                 newEm.employee_user = textBox5.Text;
                 newEm.employee_pass = textBox6.Text;
-
+                newEm.employee_status = 1;
                 context.Employees.Add(newEm);
 
                 int add = context.SaveChanges();

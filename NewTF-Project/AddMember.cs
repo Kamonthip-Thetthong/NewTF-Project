@@ -43,7 +43,7 @@ namespace NewTF_Project
                 member.member_date = DateTime.Now.Date;
                 member.member_user = textBox4.Text;
                 member.member_pass = textBox5.Text;
-
+                member.member_status = 1;
                 context.Members.Add(member);
 
                 int add = context.SaveChanges();

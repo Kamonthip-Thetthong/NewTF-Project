@@ -30,6 +30,7 @@ namespace NewTF_Project
         public string employee_position { get; set; }
         public string employee_user { get; set; }
         public string employee_pass { get; set; }
+        public Nullable<int> employee_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }

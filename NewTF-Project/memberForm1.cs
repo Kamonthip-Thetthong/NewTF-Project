@@ -24,7 +24,7 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = new Point(0, 0);
-            memberBindingSource.DataSource = context.Members.ToList();
+            memberBindingSource.DataSource = context.Members.Where(m => m.member_status == 1).ToList();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace NewTF_Project
         public void updateDataSource()
         {
             apd621_60011212001Entities context2 = new apd621_60011212001Entities();
-            memberBindingSource.DataSource = context2.Members.ToList();
+            memberBindingSource.DataSource = context2.Members.Where(m => m.member_status == 1);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -66,7 +66,8 @@ namespace NewTF_Project
                     .Where(s => s.member_user == username)
                     .First();
 
-                context.Members.Remove(toDel);
+                //context.Members.Remove(toDel);
+                toDel.member_status = 0;
                 context.SaveChanges();
                 updateDataSource();
 

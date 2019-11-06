@@ -27,6 +27,7 @@
           <Property Name="employee_position" Type="varchar" MaxLength="50" />
           <Property Name="employee_user" Type="varchar" MaxLength="50" />
           <Property Name="employee_pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="employee_status" Type="int" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -41,6 +42,7 @@
           <Property Name="member_birthday" Type="date" Nullable="false" />
           <Property Name="member_user" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="member_pass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="member_status" Type="int" />
         </EntityType>
         <EntityType Name="ProductNew">
           <Key>
@@ -218,6 +220,7 @@
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_Employee" FromRole="Employee" ToRole="Receipt" />
           <Property Name="employee_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="employee_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="employee_status" Type="Int32" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -233,6 +236,7 @@
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_Member" FromRole="Member" ToRole="Receipt" />
           <Property Name="member_user" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="member_pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="member_status" Type="Int32" />
         </EntityType>
         <EntityType Name="ProductNew">
           <Key>
@@ -407,6 +411,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="apd621_60011212001Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="employee_status" ColumnName="employee_status" />
                 <ScalarProperty Name="employee_pass" ColumnName="employee_pass" />
                 <ScalarProperty Name="employee_user" ColumnName="employee_user" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -423,6 +428,7 @@
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="apd621_60011212001Model.Member">
               <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="member_status" ColumnName="member_status" />
                 <ScalarProperty Name="member_pass" ColumnName="member_pass" />
                 <ScalarProperty Name="member_user" ColumnName="member_user" />
                 <ScalarProperty Name="member_name" ColumnName="member_name" />
