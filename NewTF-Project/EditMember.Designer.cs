@@ -32,6 +32,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,12 +50,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.memberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,10 @@
             this.textBox5.Size = new System.Drawing.Size(330, 29);
             this.textBox5.TabIndex = 42;
             // 
+            // memberBindingSource
+            // 
+            this.memberBindingSource.DataSource = typeof(NewTF_Project.Member);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -118,7 +122,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(791, 37);
+            this.panel1.Size = new System.Drawing.Size(999, 37);
             this.panel1.TabIndex = 39;
             // 
             // label5
@@ -248,10 +252,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // memberBindingSource
-            // 
-            this.memberBindingSource.DataSource = typeof(NewTF_Project.Member);
-            // 
             // memberBindingSource1
             // 
             this.memberBindingSource1.DataSource = typeof(NewTF_Project.Member);
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 470);
+            this.ClientSize = new System.Drawing.Size(999, 612);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox5);
@@ -281,11 +281,11 @@
             this.Name = "EditMember";
             this.Text = "EditMember";
             this.Load += new System.EventHandler(this.EditMember_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
