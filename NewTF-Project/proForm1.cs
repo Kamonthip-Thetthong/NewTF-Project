@@ -147,5 +147,10 @@ namespace NewTF_Project
             label14.Text = result.product_type.ToString();
             pictureBox1.Image = byteArrayToImage(result.product_picture);
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
