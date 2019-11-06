@@ -47,7 +47,7 @@
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="int" Nullable="false" />
-          <Property Name="product_name" Type="varchar" MaxLength="100" />
+          <Property Name="product_name" Type="varchar(max)" />
           <Property Name="product_type" Type="varchar" MaxLength="100" />
           <Property Name="product_detail" Type="varchar(max)" />
           <Property Name="product_picture" Type="image" />
@@ -239,7 +239,7 @@
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="Int32" Nullable="false" />
-          <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="product_amount" Type="Int32" />
