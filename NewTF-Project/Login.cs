@@ -36,13 +36,19 @@ namespace NewTF_Project
                     .Where(em => em.employee_user == textBox1.Text && em.employee_pass == textBox2.Text)
                     .First();
 
-                HomePage home = new HomePage(result);
+                HomePage home = new HomePage(result, this);
                 home.Show();
                 this.Hide();
             }
             catch {
                 MessageBox.Show("Username หรือ Password ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง");
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
     }
 }

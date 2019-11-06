@@ -38,11 +38,13 @@ namespace NewTF_Project
             comboBox1.Items.Add("พนักงานคลังสินค้า");
 
             bindingSource1.DataSource = em;
+
+            label2.Left = (this.Width - label2.Width) / 2;
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            emForm.updateDataSource();
+            
             this.Close();
         }
 

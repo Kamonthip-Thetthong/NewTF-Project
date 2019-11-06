@@ -14,9 +14,11 @@ namespace NewTF_Project
     public partial class HomePage : Form
     {
         Employee user;
-        public HomePage(Employee user)
+        Login login;
+        public HomePage(Employee user, Login login)
         {
             this.user = user;
+            this.login = login;
             InitializeComponent();
         }
 
@@ -88,6 +90,8 @@ namespace NewTF_Project
                 em.MdiParent = this;
                 em.Show();
             }
+            MessageBox.Show("size"+this.Size);
+
         }
 
         public Image byteArrayToImage(byte[] byteArrayIn)
@@ -123,6 +127,12 @@ namespace NewTF_Project
             {
                 MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
             }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            login.Show();
+            this.Close();
         }
     }
 }

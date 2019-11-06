@@ -26,6 +26,7 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = em.Location;
+            label2.Left = (this.Width - label2.Width) / 2;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace NewTF_Project
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            em.updateDataSource();
+            
             this.Close();
         }
 
