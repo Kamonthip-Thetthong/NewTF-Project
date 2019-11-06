@@ -26,10 +26,12 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = new Point(0, 0);
+            label2.Left = (this.Width - label2.Width) / 2;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
             string url = "https://www.jib.co.th/web/product/readProduct/" + textBox1.Text;
             HtmlWeb web = new HtmlWeb();
             var doc = web.Load(url);
@@ -71,24 +73,43 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            ProductNew product = new ProductNew();
-
-            product.product_id = int.Parse(textBox2.Text);
-            product.product_name = textBox3.Text;
-            product.product_detail = textBox4.Text;
-            product.product_type = textBox5.Text;
-            product.product_price = float.Parse(textBox6.Text);
-            product.product_amount = Decimal.ToInt32(numericUpDown1.Value);
-            product.product_picture = ImageToByteArray(pictureBox1.Image);
-            product.product_status = 1;
-
-            context.ProductNews.Add(product);
-            int add = context.SaveChanges();
-            if (add > 0)
+            try
             {
-                MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
-                pro.updateDataSorce();
-                this.Close();
+                int id = int.Parse(textBox2.Text);
+                var result = context.ProductNews
+                    .Where(p => p.product_id == id)
+                    .First();
+                result.product_amount = Decimal.ToInt32(numericUpDown1.Value);
+                result.product_status = 1;
+                int add = context.SaveChanges();
+                if (add > 0)
+                {
+                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
+                    pro.updateDataSorce();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                ProductNew product = new ProductNew();
+
+                product.product_id = int.Parse(textBox2.Text);
+                product.product_name = textBox3.Text;
+                product.product_detail = textBox4.Text;
+                product.product_type = textBox5.Text;
+                product.product_price = float.Parse(textBox6.Text);
+                product.product_amount = Decimal.ToInt32(numericUpDown1.Value);
+                product.product_picture = ImageToByteArray(pictureBox1.Image);
+                product.product_status = 1;
+
+                context.ProductNews.Add(product);
+                int add = context.SaveChanges();
+                if (add > 0)
+                {
+                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
+                    pro.updateDataSorce();
+                    this.Close();
+                }
             }
 
         }

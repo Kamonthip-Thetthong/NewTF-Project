@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,22 @@ namespace NewTF_Project
                 .Where(p => p.product_status == 1)
                 .ToList();
 
+            label2.Left = (this.Width - label2.Width) / 2;
+
+            string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            int id = int.Parse(str);
+
+            var result = context.ProductNews
+                .Where(p => p.product_id == id)
+                .First();
+
+            label8.Text = result.product_id.ToString();
+            label9.Text = result.product_name.ToString();
+            label10.Text = result.product_detail.ToString();
+            label11.Text = result.product_price.ToString();
+            label12.Text = result.product_amount.ToString();
+            label14.Text = result.product_type.ToString();
+            pictureBox1.Image = byteArrayToImage(result.product_picture);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -86,6 +103,49 @@ namespace NewTF_Project
                 MessageBox.Show("ลบเรียบร้อย");
                 updateDataSorce();
             }
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            int id = int.Parse(str);
+
+            var result = context.ProductNews
+                .Where(p => p.product_id == id)
+                .First();
+
+            label8.Text = result.product_id.ToString();
+            label9.Text = result.product_name.ToString();
+            label10.Text = result.product_detail.ToString();
+            label11.Text = result.product_price.ToString();
+            label12.Text = result.product_amount.ToString();
+            label14.Text = result.product_type.ToString();
+            pictureBox1.Image = byteArrayToImage(result.product_picture);
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
+        private void DataGridView1_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            int id = int.Parse(str);
+
+            var result = context.ProductNews
+                .Where(p => p.product_id == id)
+                .First();
+
+            label8.Text = result.product_id.ToString();
+            label9.Text = result.product_name.ToString();
+            label10.Text = result.product_detail.ToString();
+            label11.Text = result.product_price.ToString();
+            label12.Text = result.product_amount.ToString();
+            label14.Text = result.product_type.ToString();
+            pictureBox1.Image = byteArrayToImage(result.product_picture);
         }
     }
 }
