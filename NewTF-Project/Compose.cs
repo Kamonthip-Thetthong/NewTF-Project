@@ -17,6 +17,7 @@ namespace NewTF_Project
         public int compose_id { get; set; }
         public Nullable<int> product_id { get; set; }
         public Nullable<int> set_id { get; set; }
+        public Nullable<int> product_amount { get; set; }
     
         public virtual ProductNew ProductNew { get; set; }
         public virtual ProductSet ProductSet { get; set; }

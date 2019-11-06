@@ -12,6 +12,7 @@
           <Property Name="compose_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_id" Type="int" />
           <Property Name="set_id" Type="int" />
+          <Property Name="product_amount" Type="int" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -62,12 +63,10 @@
             <PropertyRef Name="set_id" />
           </Key>
           <Property Name="set_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="set_amount" Type="int" />
           <Property Name="set_name" Type="varchar" MaxLength="100" />
-          <Property Name="set_detail" Type="varchar(max)" />
           <Property Name="set_status" Type="bit" />
           <Property Name="set_price" Type="float" />
-          <Property Name="set_picture" Type="image" />
+          <Property Name="set_isDel" Type="int" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -204,6 +203,7 @@
           <Property Name="set_id" Type="Int32" />
           <NavigationProperty Name="ProductNew" Relationship="Self.FK_Compose_ProductNew" FromRole="Compose" ToRole="ProductNew" />
           <NavigationProperty Name="ProductSet" Relationship="Self.FK_Compose_ProductSet" FromRole="Compose" ToRole="ProductSet" />
+          <Property Name="product_amount" Type="Int32" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -258,14 +258,12 @@
             <PropertyRef Name="set_id" />
           </Key>
           <Property Name="set_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="set_amount" Type="Int32" />
           <Property Name="set_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="set_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="set_status" Type="Boolean" />
           <Property Name="set_price" Type="Double" />
-          <Property Name="set_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Composes" Relationship="Self.FK_Compose_ProductSet" FromRole="ProductSet" ToRole="Compose" />
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_ProductSet" FromRole="ProductSet" ToRole="Receipt" />
+          <Property Name="set_isDel" Type="Int32" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -402,6 +400,7 @@
           <EntitySetMapping Name="Composes">
             <EntityTypeMapping TypeName="apd621_60011212001Model.Compose">
               <MappingFragment StoreEntitySet="Compose">
+                <ScalarProperty Name="product_amount" ColumnName="product_amount" />
                 <ScalarProperty Name="compose_id" ColumnName="compose_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="set_id" ColumnName="set_id" />
@@ -458,13 +457,11 @@
           <EntitySetMapping Name="ProductSets">
             <EntityTypeMapping TypeName="apd621_60011212001Model.ProductSet">
               <MappingFragment StoreEntitySet="ProductSet">
+                <ScalarProperty Name="set_isDel" ColumnName="set_isDel" />
                 <ScalarProperty Name="set_id" ColumnName="set_id" />
-                <ScalarProperty Name="set_amount" ColumnName="set_amount" />
                 <ScalarProperty Name="set_name" ColumnName="set_name" />
-                <ScalarProperty Name="set_detail" ColumnName="set_detail" />
                 <ScalarProperty Name="set_status" ColumnName="set_status" />
                 <ScalarProperty Name="set_price" ColumnName="set_price" />
-                <ScalarProperty Name="set_picture" ColumnName="set_picture" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

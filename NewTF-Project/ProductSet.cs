@@ -22,12 +22,10 @@ namespace NewTF_Project
         }
     
         public int set_id { get; set; }
-        public Nullable<int> set_amount { get; set; }
         public string set_name { get; set; }
-        public string set_detail { get; set; }
         public Nullable<bool> set_status { get; set; }
         public Nullable<double> set_price { get; set; }
-        public byte[] set_picture { get; set; }
+        public Nullable<int> set_isDel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compose> Composes { get; set; }
