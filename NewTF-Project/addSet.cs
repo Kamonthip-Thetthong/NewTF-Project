@@ -47,6 +47,7 @@ namespace NewTF_Project
             };
 
             listView1.Items.Add(new ListViewItem(item));
+            numericUpDown1.Value = 1;
         }
 
         private void Button4_Click(object sender, EventArgs e)

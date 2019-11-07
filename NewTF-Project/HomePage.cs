@@ -134,5 +134,32 @@ namespace NewTF_Project
             login.Show();
             this.Close();
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            if (user.employee_position.ToString() == "เจ้าของร้าน")
+            {
+                FormCollection fc = Application.OpenForms;
+                bool FormFound = false;
+                foreach (Form form in fc)
+                {
+                    if(form.Name == "allowSet")
+                    {
+                        FormFound = true;
+                        form.Focus();
+                    }
+                }
+                if (FormFound == false)
+                {
+                    allowSet allow = new allowSet();
+                    allow.MdiParent = this;
+                    allow.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
+            }
+        }
     }
 }

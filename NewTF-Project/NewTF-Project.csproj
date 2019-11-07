@@ -76,6 +76,12 @@
     <Compile Include="addSet.Designer.cs">
       <DependentUpon>addSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="allowSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allowSet.Designer.cs">
+      <DependentUpon>allowSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compose.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addSet.resx">
       <DependentUpon>addSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allowSet.resx">
+      <DependentUpon>allowSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editEm.resx">
       <DependentUpon>editEm.cs</DependentUpon>

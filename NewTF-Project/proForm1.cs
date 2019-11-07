@@ -81,10 +81,10 @@ namespace NewTF_Project
                 .ToList();
         }
 
-        public void delSet()
-        {
-            //apd621_60011212001Entities context2 = new apd621_60011212001Entities();
-        }
+        //public void delSet()
+        //{
+        //    //apd621_60011212001Entities context2 = new apd621_60011212001Entities();
+        //}
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -377,6 +377,22 @@ namespace NewTF_Project
                 MessageBox.Show("ยกเลิกการขออนุมัติเซ็ตสินค้าเรียบร้อย");
             }
             updateSet();
+        }
+
+        private void TabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+
+        }
+
+        private void TabControl1_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = context.ProductSets
+                .Where(s => s.set_status == true && s.set_isDel == 0)
+                .ToList();
+
+            dataGridView3.DataSource = context.ProductSets
+                .Where(s => s.set_status == false && s.set_isDel == 0)
+                .ToList();
         }
     }
 }

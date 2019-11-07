@@ -150,6 +150,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(999, 575);
             this.tabControl1.TabIndex = 7;
+            this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
             // tabPage1
             // 
