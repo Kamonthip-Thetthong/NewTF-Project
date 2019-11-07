@@ -150,7 +150,9 @@ namespace NewTF_Project
 
         private void Button4_Click(object sender, EventArgs e)
         {
-
+            addSet set = new addSet(this);
+            set.MdiParent = home;
+            set.Show();
         }
     }
 }

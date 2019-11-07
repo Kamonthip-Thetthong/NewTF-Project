@@ -90,7 +90,7 @@ namespace NewTF_Project
                 em.MdiParent = this;
                 em.Show();
             }
-            MessageBox.Show("size"+this.Size);
+           
 
         }
 
