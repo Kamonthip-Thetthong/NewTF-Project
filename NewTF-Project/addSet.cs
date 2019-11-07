@@ -48,5 +48,61 @@ namespace NewTF_Project
 
             listView1.Items.Add(new ListViewItem(item));
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            {
+                if (listView1.Items[i].Selected)
+                {
+                    listView1.Items[i].Remove();
+                }
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ProductSet set = new ProductSet();
+            set.set_name = textBox2.Text;
+            set.set_status = false;
+            set.set_price = Convert.ToDouble(textBox3.Text);
+            set.set_isDel = 0;
+
+            context.ProductSets.Add(set);
+            context.SaveChanges();
+
+            var result = context.ProductSets
+                .Select(p => new { p.set_id })
+                .Max(m => m.set_id);
+            
+            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            {
+                Compose com = new Compose();
+                com.set_id = result;
+                com.product_id = int.Parse(listView1.Items[i].SubItems[0].Text);
+                com.product_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
+                context.Composes.Add(com);
+                context.SaveChanges();
+            }
+
+            MessageBox.Show("เพิ่มเซ็ตสินค้าเรียบร้อยแล้ว กรูณารอการอนุมัติ");
+            pro.updateSet();
+
+            textBox2.Text = "";
+            textBox3.Text = "";
+            listView1.Items.Clear();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            textBox3.Text = "";
+            listView1.Items.Clear();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

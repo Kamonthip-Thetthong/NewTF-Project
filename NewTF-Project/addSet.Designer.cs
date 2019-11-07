@@ -35,19 +35,21 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.productidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productdetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +65,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,6 +80,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(13, 57);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(523, 502);
@@ -115,6 +120,7 @@
             // 
             this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -139,10 +145,25 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(25, 129);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(394, 324);
+            this.listView1.Size = new System.Drawing.Size(394, 279);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ชื่อสินค้า";
+            this.columnHeader2.Width = 230;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "จำนวน";
+            this.columnHeader3.Width = 70;
             // 
             // textBox3
             // 
@@ -150,6 +171,19 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(293, 26);
             this.textBox3.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Firebrick;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(289, 414);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 33);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "เอาออก";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -162,6 +196,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "ยกเลิก";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -173,6 +208,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "บันทึก";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // textBox2
             // 
@@ -211,21 +247,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ชื่อเซ็ต : ";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "ชื่อสินค้า";
-            this.columnHeader2.Width = 230;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "จำนวน";
-            this.columnHeader3.Width = 70;
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(212, 571);
@@ -261,17 +282,32 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "ชิ้น";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Maroon;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(13, 567);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(73, 33);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "back";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // productidDataGridViewTextBoxColumn
             // 
             this.productidDataGridViewTextBoxColumn.DataPropertyName = "product_id";
             this.productidDataGridViewTextBoxColumn.HeaderText = "ID";
             this.productidDataGridViewTextBoxColumn.Name = "productidDataGridViewTextBoxColumn";
+            this.productidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // productnameDataGridViewTextBoxColumn
             // 
             this.productnameDataGridViewTextBoxColumn.DataPropertyName = "product_name";
             this.productnameDataGridViewTextBoxColumn.HeaderText = "ชื่อสินค้า";
             this.productnameDataGridViewTextBoxColumn.Name = "productnameDataGridViewTextBoxColumn";
+            this.productnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.productnameDataGridViewTextBoxColumn.Width = 150;
             // 
             // productdetailDataGridViewTextBoxColumn
@@ -279,6 +315,7 @@
             this.productdetailDataGridViewTextBoxColumn.DataPropertyName = "product_detail";
             this.productdetailDataGridViewTextBoxColumn.HeaderText = "รายละเอียด";
             this.productdetailDataGridViewTextBoxColumn.Name = "productdetailDataGridViewTextBoxColumn";
+            this.productdetailDataGridViewTextBoxColumn.ReadOnly = true;
             this.productdetailDataGridViewTextBoxColumn.Width = 300;
             // 
             // producttypeDataGridViewTextBoxColumn
@@ -286,6 +323,7 @@
             this.producttypeDataGridViewTextBoxColumn.DataPropertyName = "product_type";
             this.producttypeDataGridViewTextBoxColumn.HeaderText = "ประเภท";
             this.producttypeDataGridViewTextBoxColumn.Name = "producttypeDataGridViewTextBoxColumn";
+            this.producttypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.producttypeDataGridViewTextBoxColumn.Width = 150;
             // 
             // productamountDataGridViewTextBoxColumn
@@ -293,12 +331,14 @@
             this.productamountDataGridViewTextBoxColumn.DataPropertyName = "product_amount";
             this.productamountDataGridViewTextBoxColumn.HeaderText = "คงเหลือ";
             this.productamountDataGridViewTextBoxColumn.Name = "productamountDataGridViewTextBoxColumn";
+            this.productamountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // productpriceDataGridViewTextBoxColumn
             // 
             this.productpriceDataGridViewTextBoxColumn.DataPropertyName = "product_price";
             this.productpriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
             this.productpriceDataGridViewTextBoxColumn.Name = "productpriceDataGridViewTextBoxColumn";
+            this.productpriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // productNewBindingSource
             // 
@@ -312,6 +352,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -360,5 +401,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
