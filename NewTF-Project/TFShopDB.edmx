@@ -54,9 +54,9 @@
           <Property Name="product_type" Type="varchar" MaxLength="100" />
           <Property Name="product_detail" Type="varchar(max)" />
           <Property Name="product_picture" Type="image" />
-          <Property Name="product_amount" Type="int" />
-          <Property Name="product_price" Type="float" />
-          <Property Name="product_status" Type="int" />
+          <Property Name="product_amount" Type="int" Nullable="false" />
+          <Property Name="product_price" Type="float" Nullable="false" />
+          <Property Name="product_status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductSet">
           <Key>
@@ -246,12 +246,12 @@
           <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="product_amount" Type="Int32" />
-          <Property Name="product_price" Type="Double" />
+          <Property Name="product_amount" Type="Int32" Nullable="false" />
+          <Property Name="product_price" Type="Double" Nullable="false" />
           <NavigationProperty Name="Composes" Relationship="Self.FK_Compose_ProductNew" FromRole="ProductNew" ToRole="Compose" />
           <NavigationProperty Name="Receipts" Relationship="Self.FK_Receipt_ProductNew" FromRole="ProductNew" ToRole="Receipt" />
           <Property Name="product_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="product_status" Type="Int32" />
+          <Property Name="product_status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductSet">
           <Key>

@@ -123,6 +123,7 @@ namespace NewTF_Project
             if (dialogResult == DialogResult.Yes)
             {
                 result.product_status = 0;
+                result.product_amount = 0;
                 context.SaveChanges();
                 MessageBox.Show("ลบเรียบร้อย");
                 updateDataSorce();
@@ -393,6 +394,13 @@ namespace NewTF_Project
             dataGridView3.DataSource = context.ProductSets
                 .Where(s => s.set_status == false && s.set_isDel == 0)
                 .ToList();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            viewReportProduct view = new viewReportProduct();
+            view.MdiParent = home;
+            view.Show();
         }
     }
 }
