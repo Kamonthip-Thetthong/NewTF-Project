@@ -43,6 +43,10 @@ namespace NewTF_Project
             var result = context.ProductNews
                 .Where(p => p.product_id == id)
                 .First();
+            RestClient client2 = new RestClient("http://www.csmsu.net");
+            RestRequest request2 = new RestRequest("/APDServiceRest/api/Product/" + result.product_id + "/8"); ;
+            var resultGet = client2.Execute<List<getProduct>>(request2, Method.GET);
+
             RestClient client = new RestClient("http://www.csmsu.net");
             RestRequest request = new RestRequest("/APDServiceRest/api/Product");
 
@@ -57,10 +61,8 @@ namespace NewTF_Project
                 str = textBox6.Text.Remove(inx, 1);
             }
             insertP.productprice = str;
-            //string x = Encoding.UTF8.GetString(result.product_picture, 1, result.product_picture.Length - 1);
-            //MessageBox.Show("Test "+x);
-            //string converted = Encoding.UTF8.GetString(result.product_picture, 0, result.product_picture.Length);
-            insertP.productimgurl = "img";
+            
+            insertP.productimgurl = resultGet.Data.First().productimgurl;
             insertP.shopid = 8;
             request.AddObject(insertP);
 

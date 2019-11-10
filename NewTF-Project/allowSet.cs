@@ -91,5 +91,38 @@ namespace NewTF_Project
                 .Where(p => p.set_status == false && p.set_isDel == 0)
                 .ToList();
         }
+
+        private void DataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
+            int id = int.Parse(str);
+            var result = context.ProductSets
+                .Where(p => p.set_id == id)
+                .First();
+
+            label26.Text = result.set_id.ToString();
+            label28.Text = result.set_name;
+            label30.Text = result.set_price.ToString();
+
+            var coms = context.Composes
+                .Where(c => c.set_id == result.set_id)
+                .ToList();
+
+            foreach (var com in coms)
+            {
+                var product = context.ProductNews
+                    .Where(p => p.product_id == com.product_id)
+                    .First();
+
+                string[] item = new string[]
+                {
+                    product.product_id.ToString(),
+                    product.product_name,
+                    com.product_amount.ToString()
+                };
+
+                listView1.Items.Add(new ListViewItem(item));
+            }
+        }
     }
 }
