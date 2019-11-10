@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,7 @@ namespace NewTF_Project
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Location = new Point(0, 0);
+            label2.Left = (this.Width - label2.Width) / 2;
 
             bindingSource1.DataSource = context.ProductNews
                 .Where(p => p.product_id.ToString() == data)
@@ -37,11 +39,39 @@ namespace NewTF_Project
             bindingSource1.EndEdit();
 
             int ed = context.SaveChanges();
-            if(ed > 0)
+            int id = int.Parse(textBox2.Text);
+            var result = context.ProductNews
+                .Where(p => p.product_id == id)
+                .First();
+            RestClient client = new RestClient("http://www.csmsu.net");
+            RestRequest request = new RestRequest("/APDServiceRest/api/Product");
+
+            putToService insertP = new putToService();
+            insertP.productid = textBox2.Text;
+            insertP.productname = textBox3.Text;
+            insertP.productdetail = textBox4.Text;
+            string str = textBox6.Text;
+            while (str.Contains(","))
+            {
+                int inx = textBox6.Text.IndexOf(',');
+                str = textBox6.Text.Remove(inx, 1);
+            }
+            insertP.productprice = str;
+            //string x = Encoding.UTF8.GetString(result.product_picture, 1, result.product_picture.Length - 1);
+            //MessageBox.Show("Test "+x);
+            //string converted = Encoding.UTF8.GetString(result.product_picture, 0, result.product_picture.Length);
+            insertP.productimgurl = "img";
+            insertP.shopid = 8;
+            request.AddObject(insertP);
+
+            var result2 = client.Execute(request, Method.PUT);
+            
+            //MessageBox.Show("Img = "+ converted);
+            if (ed > 0 && result2.ResponseStatus == ResponseStatus.Completed)
             {
                 MessageBox.Show("แก้ไขข้อมูลสินค้าเรียบร้อยแล้ว");
-                pro.updateDataSorce();
-                this.Close();
+                //pro.updateDataSorce();
+                //this.Close();
             }
         }
 

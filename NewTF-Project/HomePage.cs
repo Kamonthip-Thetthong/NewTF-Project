@@ -89,8 +89,18 @@ namespace NewTF_Project
                 emForm1 em = new emForm1(this);
                 em.MdiParent = this;
                 em.Show();
+            }else if(user.employee_position.ToString() == "พนักงานคลังสินค้า")
+            {
+                proForm1 pro = new proForm1(this);
+                pro.MdiParent = this;
+                pro.Show();
             }
-           
+            else if (user.employee_position.ToString() == "พนักงานขายหน้าร้าน")
+            {
+                sellProduct pro = new sellProduct();
+                pro.MdiParent = this;
+                pro.Show();
+            }
 
         }
 
@@ -154,6 +164,34 @@ namespace NewTF_Project
                     allowSet allow = new allowSet();
                     allow.MdiParent = this;
                     allow.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
+            }
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            if (user.employee_position.ToString() == "เจ้าของร้าน" || user.employee_position.ToString() == "พนักงานขายหน้าร้าน")
+            {
+                FormCollection fc = Application.OpenForms;
+                bool FormFound = false;
+                foreach (Form form in fc)
+                {
+                    if (form.Name == "sellProduct")
+                    {
+                        FormFound = true;
+                        form.Focus();
+                        break;
+                    }
+                }
+                if (FormFound == false)
+                {
+                    sellProduct sell = new sellProduct();
+                    sell.MdiParent = this;
+                    sell.Show();
                 }
             }
             else

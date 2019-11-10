@@ -191,6 +191,12 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="sellProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sellProduct.Designer.cs">
+      <DependentUpon>sellProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="showPro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TFShopDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="updateToService.cs" />
     <Compile Include="viewReportProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +284,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sellProduct.resx">
+      <DependentUpon>sellProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="showPro.resx">
       <DependentUpon>showPro.cs</DependentUpon>
     </EmbeddedResource>
