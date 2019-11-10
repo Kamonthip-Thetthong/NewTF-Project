@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -401,6 +402,13 @@ namespace NewTF_Project
             viewReportProduct view = new viewReportProduct();
             view.MdiParent = home;
             view.Show();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            printBarcode print = new printBarcode();
+            print.MdiParent = home;
+            print.Show();
         }
     }
 }
