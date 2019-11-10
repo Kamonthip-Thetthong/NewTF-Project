@@ -64,7 +64,7 @@ namespace NewTF_Project
 
                 var toDel = context.Members
                     .Where(s => s.member_id.ToString() == id)
-                    .First();
+                    .First(); 
 
                 //context.Members.Remove(toDel);
                 toDel.member_status = 0;
