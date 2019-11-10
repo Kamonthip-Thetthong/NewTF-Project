@@ -51,7 +51,7 @@ namespace NewTF_Project
         public void updateDataSource()
         {
             apd621_60011212001Entities context2 = new apd621_60011212001Entities();
-            memberBindingSource.DataSource = context2.Members.Where(m => m.member_status == 1);
+            memberBindingSource.DataSource = context2.Members.Where(m => m.member_status == 1).ToList();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -60,11 +60,11 @@ namespace NewTF_Project
             DialogResult dialogResult = MessageBox.Show("คุณต้องการลบ " + name + " ออก ใช่หรือไม่?", "ยืนยันการลบ", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string username = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 var toDel = context.Members
-                    .Where(s => s.member_user == username)
-                    .First();
+                    .Where(s => s.member_id.ToString() == id)
+                    .First(); 
 
                 //context.Members.Remove(toDel);
                 toDel.member_status = 0;
@@ -76,7 +76,7 @@ namespace NewTF_Project
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            string data = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            string data = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             EditMember edit = new EditMember(data, this);
             edit.MdiParent = home;
             edit.Show(); 

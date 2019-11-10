@@ -22,7 +22,7 @@ namespace NewTF_Project
             this.ed = data;
             this.mbForm = memberForm1;
             member = context.Members
-                .Where(s => s.member_user == ed).First();
+                .Where(s => s.member_id.ToString() == ed).First();
             InitializeComponent();
         }
 
@@ -66,6 +66,14 @@ namespace NewTF_Project
             var ms = new MemoryStream();
             image.Save(ms, image.RawFormat);
             return ms.ToArray();
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }
