@@ -98,6 +98,12 @@
     <Compile Include="allowSet.Designer.cs">
       <DependentUpon>allowSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="compareProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compareProduct.Designer.cs">
+      <DependentUpon>compareProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compose.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
@@ -191,6 +197,7 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>TFShopDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="resultGetProduct.cs" />
     <Compile Include="sellProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allowSet.resx">
       <DependentUpon>allowSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compareProduct.resx">
+      <DependentUpon>compareProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editEm.resx">
       <DependentUpon>editEm.cs</DependentUpon>

@@ -208,6 +208,7 @@
             this.button7.TabIndex = 0;
             this.button7.Text = "เทียบราคา";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // HomePage
             // 

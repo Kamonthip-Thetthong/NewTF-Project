@@ -199,5 +199,12 @@ namespace NewTF_Project
                 MessageBox.Show("คุณไม่มีสิทธิ์ในการเข้าถึงฟังก์ชันนี้");
             }
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            compareProduct compare = new compareProduct();
+            compare.MdiParent = this;
+            compare.Show();
+        }
     }
 }
