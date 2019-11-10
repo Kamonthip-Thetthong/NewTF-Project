@@ -23,17 +23,7 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var result = context.Members
-                    .Where(m => m.member_user == textBox4.Text).First();
-
-
-                MessageBox.Show("username นี้ถูกใช้ไปแล้ว!!!");
-
-            }
-            catch
-            {
+            
                 Member member = new Member();
                 member.member_name = textBox1.Text;
                 member.member_tel = textBox2.Text;
@@ -41,8 +31,8 @@ namespace NewTF_Project
                 member.member_picture = ImageToByteArray(pictureBox1.Image);
                 member.member_birthday = dateTimePicker1.Value.Date;
                 member.member_date = DateTime.Now.Date;
-                member.member_user = textBox4.Text;
-                member.member_pass = textBox5.Text;
+                member.member_user = "";
+                member.member_pass = "";
                 member.member_status = 1;
                 context.Members.Add(member);
 
@@ -54,7 +44,7 @@ namespace NewTF_Project
                     this.Close();
                 }
 
-            }
+            
         }
 
         private byte[] ImageToByteArray(Image image)
