@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace NewTF_Project
     {
         apd621_60011212001Entities context = new apd621_60011212001Entities();
         proForm1 pro;
+        string imgUrl = "";
         public AddPro(proForm1 pro)
         {
             this.pro = pro;
@@ -67,6 +69,7 @@ namespace NewTF_Project
 
             var pic = html.Where(t => t.GetAttributeValue("name", "") == "twitter:image").First();
             string url1 = pic.GetAttributeValue("content", "").ToString();
+            imgUrl = url1;
 
             pictureBox1.Load(url1);
         }
@@ -82,11 +85,12 @@ namespace NewTF_Project
                 result.product_amount = Decimal.ToInt32(numericUpDown1.Value);
                 result.product_status = 1;
                 int add = context.SaveChanges();
+
                 if (add > 0)
                 {
                     MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
-                    pro.updateDataSorce();
-                    this.Close();
+                    //pro.updateDataSorce();
+                    //this.Close();
                 }
             }
             catch
@@ -104,11 +108,31 @@ namespace NewTF_Project
 
                 context.ProductNews.Add(product);
                 int add = context.SaveChanges();
-                if (add > 0)
+
+                RestClient client = new RestClient("http://www.csmsu.net");
+                RestRequest request = new RestRequest("/APDServiceRest/api/Product");
+
+                insertProduct insertP = new insertProduct();
+                insertP.productid = textBox2.Text;
+                insertP.productname = textBox3.Text;
+                insertP.productdetail = textBox4.Text;
+                string str = textBox6.Text;
+                while (str.Contains(","))
                 {
-                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
-                    pro.updateDataSorce();
-                    this.Close();
+                    int inx = textBox6.Text.IndexOf(',');
+                    str = textBox6.Text.Remove(inx, 1);
+                }  
+                insertP.productprice = int.Parse(str);
+                insertP.productimgurl = imgUrl;
+                insertP.shopid = 8;
+                request.AddObject(insertP);
+
+                var result = client.Execute(request, Method.POST);
+                if (add > 0 && result.ResponseStatus == ResponseStatus.Completed)
+                {
+                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว "+result.ToString());
+                    //pro.updateDataSorce();
+                    //this.Close();
                 }
             }
 
@@ -123,6 +147,7 @@ namespace NewTF_Project
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            pro.updateDataSorce();
             this.Close();
         }
     }

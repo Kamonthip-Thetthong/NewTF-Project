@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -182,7 +183,7 @@ namespace NewTF_Project
 
         private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
             int id = int.Parse(str);
             var result = context.ProductSets
                 .Where(p => p.set_id == id)
@@ -226,6 +227,8 @@ namespace NewTF_Project
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
+            listView1.Items.Clear();
+
             var coms = context.Composes
                 .Where(c => c.set_id == result.set_id)
                 .ToList();
@@ -263,6 +266,7 @@ namespace NewTF_Project
                 .Where(c => c.set_id == result.set_id)
                 .ToList();
 
+            listView1.Items.Clear();
             foreach (var com in coms)
             {
                 var product = context.ProductNews
@@ -296,6 +300,7 @@ namespace NewTF_Project
                 .Where(c => c.set_id == result.set_id)
                 .ToList();
 
+            listView2.Items.Clear();
             foreach (var com in coms)
             {
                 var product = context.ProductNews
@@ -329,6 +334,7 @@ namespace NewTF_Project
                 .Where(c => c.set_id == result.set_id)
                 .ToList();
 
+            listView2.Items.Clear();
             foreach (var com in coms)
             {
                 var product = context.ProductNews
@@ -401,6 +407,13 @@ namespace NewTF_Project
             viewReportProduct view = new viewReportProduct();
             view.MdiParent = home;
             view.Show();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            printBarcode print = new printBarcode();
+            print.MdiParent = home;
+            print.Show();
         }
     }
 }
