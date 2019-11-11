@@ -415,5 +415,45 @@ namespace NewTF_Project
             print.MdiParent = home;
             print.Show();
         }
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label25_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

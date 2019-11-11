@@ -49,13 +49,14 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.PaleGreen;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(353, 522);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(353, 543);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 63);
+            this.button2.Size = new System.Drawing.Size(143, 42);
             this.button2.TabIndex = 21;
             this.button2.Text = "เพิ่มสมาชิก";
             this.button2.UseVisualStyleBackColor = false;
@@ -184,13 +185,14 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Tomato;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.button3.BackColor = System.Drawing.Color.Firebrick;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(506, 522);
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Location = new System.Drawing.Point(506, 543);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 63);
+            this.button3.Size = new System.Drawing.Size(143, 42);
             this.button3.TabIndex = 27;
             this.button3.Text = "ยกเลิก";
             this.button3.UseVisualStyleBackColor = false;
