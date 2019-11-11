@@ -57,33 +57,36 @@ namespace NewTF_Project
                 listView1.Items.Clear();
                 foreach (var pro in result.Data)
                 {
+                    if(pro.shopid != 8)
+                    {
+                        string shopname = pro.systemUser.shopname;
+                        string productname = pro.productname;
+                        int price = pro.productprice;
+                        string com = "";
+                        if (Convert.ToInt32(myShop.product_price) < price)
+                        {
+                            com = "ถูกกว่า " + (price - Convert.ToInt32(myShop.product_price)) + " บาท";
+                        }
+                        else if (Convert.ToInt32(myShop.product_price) > price)
+                        {
+                            com = "แพงกว่า " + (Convert.ToInt32(myShop.product_price) - price) + " บาท";
+                        }
+                        else
+                        {
+                            com = "เท่ากัน";
+                        }
 
-                    string shopname = pro.systemUser.shopname;
-                    string productname = pro.productname;
-                    int price = pro.productprice;
-                    string com = "";
-                    if (Convert.ToInt32(myShop.product_price) < price)
-                    {
-                        com = "ถูกกว่า " + (price - Convert.ToInt32(myShop.product_price)) + " บาท";
-                    }
-                    else if (Convert.ToInt32(myShop.product_price) > price)
-                    {
-                        com = "แพงกว่า " + (Convert.ToInt32(myShop.product_price) - price) + " บาท";
-                    }
-                    else
-                    {
-                        com = "เท่ากัน";
-                    }
-
-                    string[] item = new string[]
-                    {
+                        string[] item = new string[]
+                        {
                         shopname,
                         productname,
                         price.ToString(),
                         com
-                    };
+                        };
 
-                    listView1.Items.Add(new ListViewItem(item));
+                        listView1.Items.Add(new ListViewItem(item));
+                    }
+                    
                 }
             }
             catch

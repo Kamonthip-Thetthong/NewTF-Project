@@ -108,6 +108,7 @@ namespace NewTF_Project
                 .Where(c => c.set_id == result.set_id)
                 .ToList();
 
+            listView1.Items.Clear();
             foreach (var com in coms)
             {
                 var product = context.ProductNews

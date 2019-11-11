@@ -52,6 +52,17 @@ namespace NewTF_Project
             writer.Format = BarcodeFormat.CODE_39;
             var bc = writer.Write(id.ToString());
             pictureBox1.Image = bc;
+
+            QrCodeEncodingOptions options1 = new QrCodeEncodingOptions();
+            options1.CharacterSet = "UTF-8";
+            options1.Width = 200;
+            options1.Height = 200;
+
+            BarcodeWriter writer1 = new BarcodeWriter();
+            writer1.Options = options1;
+            writer1.Format = BarcodeFormat.QR_CODE;
+            var qr = writer1.Write(id.ToString());
+            pictureBox3.Image = qr;
         }
 
         private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -61,22 +72,45 @@ namespace NewTF_Project
             int y = 5;
             for(var i=0; i<numericUpDown1.Value; i++)
             {
-                if(x < 1000 - pictureBox1.Width)
+                if (radioButton1.Checked)
                 {
-                    Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-                    pictureBox1.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
-                    e.Graphics.DrawImage(bm, x, y);
-                    bm.Dispose();
+                    if (x < 1000 - pictureBox1.Width)
+                    {
+                        Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                        pictureBox1.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
+                        e.Graphics.DrawImage(bm, x, y);
+                        bm.Dispose();
+                    }
+                    else
+                    {
+                        y += pictureBox1.Height + 5;
+                        x = 5;
+                        Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                        pictureBox1.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
+                        e.Graphics.DrawImage(bm, x, y);
+                        bm.Dispose();
+                    }
                 }
                 else
                 {
-                    y += pictureBox1.Height + 5;
-                    x = 5;
-                    Bitmap bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-                    pictureBox1.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
-                    e.Graphics.DrawImage(bm, x, y);
-                    bm.Dispose();
+                    if (x < 1000 - pictureBox3.Width)
+                    {
+                        Bitmap bm = new Bitmap(pictureBox3.Width, pictureBox3.Height);
+                        pictureBox3.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox3.Width, pictureBox3.Height));
+                        e.Graphics.DrawImage(bm, x, y);
+                        bm.Dispose();
+                    }
+                    else
+                    {
+                        y += pictureBox3.Height + 5;
+                        x = 5;
+                        Bitmap bm = new Bitmap(pictureBox3.Width, pictureBox3.Height);
+                        pictureBox3.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox3.Width, pictureBox3.Height));
+                        e.Graphics.DrawImage(bm, x, y);
+                        bm.Dispose();
+                    }
                 }
+                
                 x += pictureBox1.Width + 10;
                 
             }

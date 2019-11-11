@@ -130,7 +130,7 @@ namespace NewTF_Project
                 var result = client.Execute(request, Method.POST);
                 if (add > 0 && result.ResponseStatus == ResponseStatus.Completed)
                 {
-                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว "+result.ToString());
+                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว!!!");
                     //pro.updateDataSorce();
                     //this.Close();
                 }
