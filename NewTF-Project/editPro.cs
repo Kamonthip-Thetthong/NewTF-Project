@@ -72,8 +72,8 @@ namespace NewTF_Project
             if (ed > 0 && result2.ResponseStatus == ResponseStatus.Completed)
             {
                 MessageBox.Show("แก้ไขข้อมูลสินค้าเรียบร้อยแล้ว");
-                //pro.updateDataSorce();
-                //this.Close();
+                pro.updateDataSorce();
+                this.Close();
             }
         }
 

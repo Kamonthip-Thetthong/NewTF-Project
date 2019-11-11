@@ -411,7 +411,7 @@ namespace NewTF_Project
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            printBarcode print = new printBarcode();
+            printBarcode print = new printBarcode(int.Parse(label8.Text));
             print.MdiParent = home;
             print.Show();
         }

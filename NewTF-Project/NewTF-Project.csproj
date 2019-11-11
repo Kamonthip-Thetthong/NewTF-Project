@@ -330,6 +330,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\monitor-s2719h-campaign-hero-504x350-ng.png" />
+    <None Include="Resources\74585638_939708799730657_382264244101447680_n.jpg" />
     <Content Include="TFShopDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TFShopDB.Context.cs</LastGenOutput>

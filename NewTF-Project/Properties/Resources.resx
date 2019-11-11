@@ -121,4 +121,7 @@
   <data name="monitor-s2719h-campaign-hero-504x350-ng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor-s2719h-campaign-hero-504x350-ng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="74585638_939708799730657_382264244101447680_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\74585638_939708799730657_382264244101447680_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

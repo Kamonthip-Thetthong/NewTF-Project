@@ -63,6 +63,16 @@ namespace NewTF_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _74585638_939708799730657_382264244101447680_n {
+            get {
+                object obj = ResourceManager.GetObject("74585638_939708799730657_382264244101447680_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monitor_s2719h_campaign_hero_504x350_ng {
             get {
                 object obj = ResourceManager.GetObject("monitor-s2719h-campaign-hero-504x350-ng", resourceCulture);
