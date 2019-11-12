@@ -72,11 +72,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(437, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 33);
+            this.label2.Size = new System.Drawing.Size(172, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "เทียบราคาสินค้า";
             // 
@@ -116,7 +116,7 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9});
-            this.listView1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(297, 213);
@@ -149,73 +149,73 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(595, 121);
             this.label9.MaximumSize = new System.Drawing.Size(450, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 28);
+            this.label9.Size = new System.Drawing.Size(70, 25);
             this.label9.TabIndex = 5;
             this.label9.Text = "label7";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(595, 84);
             this.label8.MaximumSize = new System.Drawing.Size(450, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 28);
+            this.label8.Size = new System.Drawing.Size(70, 25);
             this.label8.TabIndex = 5;
             this.label8.Text = "label7";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(595, 43);
             this.label7.MaximumSize = new System.Drawing.Size(450, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 28);
+            this.label7.Size = new System.Drawing.Size(70, 25);
             this.label7.TabIndex = 5;
             this.label7.Text = "label7";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(598, 174);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 36);
+            this.label10.Size = new System.Drawing.Size(60, 31);
             this.label10.TabIndex = 4;
             this.label10.Text = "VS ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(476, 121);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 28);
+            this.label6.Size = new System.Drawing.Size(126, 25);
             this.label6.TabIndex = 4;
             this.label6.Text = "ราคาสินค้า : ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(476, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 28);
+            this.label5.Size = new System.Drawing.Size(107, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "ชื่อสินค้า : ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(476, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 28);
+            this.label4.Size = new System.Drawing.Size(111, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "ID สินค้า : ";
             // 
@@ -228,7 +228,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(257, 330);
@@ -241,7 +241,7 @@
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(60, 270);
             this.button1.Name = "button1";
@@ -253,19 +253,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(107, 192);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(124, 191);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 35);
+            this.textBox1.Size = new System.Drawing.Size(115, 31);
             this.textBox1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(25, 62);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(23, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 28);
+            this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "ID สินค้า";
             // 
@@ -273,10 +273,10 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(28, 110);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 32);
+            this.radioButton1.Size = new System.Drawing.Size(85, 29);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "ทุกร้าน";
@@ -285,30 +285,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(46, 195);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 28);
+            this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID ร้าน";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(28, 152);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 32);
+            this.radioButton2.Size = new System.Drawing.Size(93, 29);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.Text = "ระบุร้าน";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(102, 56);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Location = new System.Drawing.Point(119, 53);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 35);
+            this.textBox2.Size = new System.Drawing.Size(120, 31);
             this.textBox2.TabIndex = 1;
             // 
             // compareProduct

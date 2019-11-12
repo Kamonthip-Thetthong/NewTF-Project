@@ -51,7 +51,7 @@ namespace NewTF_Project
                 label7.Text = myShop.product_id.ToString();
                 label8.Text = myShop.product_name;
                 label9.Text = myShop.product_price.ToString();
-                pictureBox1.Image = byteArrayToImage(myShop.product_picture);
+                pictureBox1.Load(myShop.product_pic);
                 var result = client.Execute<List<getProduct>>(request, Method.GET);
 
                 listView1.Items.Clear();

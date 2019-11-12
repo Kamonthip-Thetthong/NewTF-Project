@@ -82,16 +82,27 @@ namespace NewTF_Project
                 var result = context.ProductNews
                     .Where(p => p.product_id == id)
                     .First();
-                result.product_amount = Decimal.ToInt32(numericUpDown1.Value);
-                result.product_status = 1;
-                int add = context.SaveChanges();
-
-                if (add > 0)
+                if(result.product_status == 0)
                 {
-                    MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
-                    //pro.updateDataSorce();
-                    //this.Close();
+                    result.product_amount = Decimal.ToInt32(numericUpDown1.Value);
+                    result.product_status = 1;
+                    result.product_pic= imgUrl;
+
+                    int add = context.SaveChanges();
+
+
+                    if (add > 0)
+                    {
+                        MessageBox.Show("เพิ่มสินค้าเรียบร้อยแล้ว");
+                        //pro.updateDataSorce();
+                        //this.Close();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("มีสินค้าอยู่ในคลังแล้ว");
+                }
+                
             }
             catch
             {
@@ -103,7 +114,7 @@ namespace NewTF_Project
                 product.product_type = textBox5.Text;
                 product.product_price = float.Parse(textBox6.Text);
                 product.product_amount = Decimal.ToInt32(numericUpDown1.Value);
-                product.product_picture = ImageToByteArray(pictureBox1.Image);
+                product.product_pic = imgUrl;
                 product.product_status = 1;
 
                 context.ProductNews.Add(product);
@@ -136,13 +147,6 @@ namespace NewTF_Project
                 }
             }
 
-        }
-
-        public byte[] ImageToByteArray(Image image)
-        {
-            var ms = new MemoryStream();
-            image.Save(ms, image.RawFormat);
-            return ms.ToArray();
         }
 
         private void Button3_Click(object sender, EventArgs e)

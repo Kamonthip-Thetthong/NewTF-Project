@@ -40,7 +40,7 @@ namespace NewTF_Project
             label14.Text = result.product_type;
             label11.Text = result.product_price.ToString();
             label12.Text = result.product_amount.ToString();
-            pictureBox2.Image = byteArrayToImage(result.product_picture);
+            pictureBox2.Load(result.product_pic);
 
             QrCodeEncodingOptions options = new QrCodeEncodingOptions();
             options.CharacterSet = "UTF-8";
@@ -128,11 +128,5 @@ namespace NewTF_Project
             }
         }
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
     }
 }

@@ -24,11 +24,11 @@ namespace NewTF_Project
         public int product_id { get; set; }
         public string product_name { get; set; }
         public string product_type { get; set; }
-        public byte[] product_picture { get; set; }
         public int product_amount { get; set; }
         public double product_price { get; set; }
         public string product_detail { get; set; }
         public int product_status { get; set; }
+        public string product_pic { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compose> Composes { get; set; }

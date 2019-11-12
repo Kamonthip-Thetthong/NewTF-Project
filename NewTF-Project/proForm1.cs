@@ -45,7 +45,7 @@ namespace NewTF_Project
             label11.Text = result.product_price.ToString();
             label12.Text = result.product_amount.ToString();
             label14.Text = result.product_type.ToString();
-            pictureBox1.Image = byteArrayToImage(result.product_picture);
+            pictureBox1.Load(result.product_pic);
 
             dataGridView2.DataSource = context.ProductSets
                 .Where(s => s.set_status == true && s.set_isDel == 0)
@@ -146,15 +146,9 @@ namespace NewTF_Project
             label11.Text = result.product_price.ToString();
             label12.Text = result.product_amount.ToString();
             label14.Text = result.product_type.ToString();
-            pictureBox1.Image = byteArrayToImage(result.product_picture);
+            pictureBox1.Load(result.product_pic);
         }
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
 
         private void DataGridView1_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -171,7 +165,7 @@ namespace NewTF_Project
             label11.Text = result.product_price.ToString();
             label12.Text = result.product_amount.ToString();
             label14.Text = result.product_type.ToString();
-            pictureBox1.Image = byteArrayToImage(result.product_picture);
+            pictureBox1.Load(result.product_pic);
         }
 
         private void Button4_Click(object sender, EventArgs e)
