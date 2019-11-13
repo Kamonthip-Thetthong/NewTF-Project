@@ -29,9 +29,12 @@ namespace NewTF_Project
             this.Location = new Point(0, 0);
             label2.Left = (this.Width - label2.Width) / 2;
 
-            bindingSource1.DataSource = context.ProductNews
+            var pd = context.ProductNews
                 .Where(p => p.product_id.ToString() == data)
                 .First();
+            bindingSource1.DataSource = pd;
+
+            pictureBox1.Load(pd.product_pic);
         }
 
         private void Button2_Click(object sender, EventArgs e)

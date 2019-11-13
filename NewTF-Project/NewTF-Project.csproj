@@ -219,6 +219,12 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
+    <Compile Include="recReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="resultGetProduct.cs" />
     <Compile Include="sellProduct.cs">
       <SubType>Form</SubType>
@@ -322,6 +328,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="recReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>recReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="sellProduct.resx">
       <DependentUpon>sellProduct.cs</DependentUpon>
     </EmbeddedResource>

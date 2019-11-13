@@ -97,7 +97,7 @@ namespace NewTF_Project
             }
             else if (user.employee_position.ToString() == "พนักงานขายหน้าร้าน")
             {
-                sellProduct pro = new sellProduct(user);
+                sellProduct pro = new sellProduct(user, this);
                 pro.MdiParent = this;
                 pro.Show();
             }
@@ -189,7 +189,7 @@ namespace NewTF_Project
                 }
                 if (FormFound == false)
                 {
-                    sellProduct sell = new sellProduct(user);
+                    sellProduct sell = new sellProduct(user, this);
                     sell.MdiParent = this;
                     sell.Show();
                 }

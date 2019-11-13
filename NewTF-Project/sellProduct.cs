@@ -15,6 +15,7 @@ namespace NewTF_Project
 {
     public partial class sellProduct : Form
     {
+        HomePage home;
         FilterInfoCollection webcams;
         VideoCaptureDevice videoIn;
         bool isOpen = false;
@@ -22,8 +23,9 @@ namespace NewTF_Project
         int clickIn = 1;
         apd621_60011212001Entities context = new apd621_60011212001Entities();
         Employee user;
-        public sellProduct(Employee user)
+        public sellProduct(Employee user, HomePage home)
         {
+            this.home = home;
             this.user = user;
             InitializeComponent();
         }
@@ -398,7 +400,9 @@ namespace NewTF_Project
                             }
                         }
                     }
-                    MessageBox.Show("ชำระสินค้าเรียบร้อยแล้ว");
+                    showReceipt show = new showReceipt(recNum);
+                    show.MdiParent = home;
+                    show.Show();
                 }
                 else
                 {
@@ -548,7 +552,9 @@ namespace NewTF_Project
                             }
                         }
                     }
-                    MessageBox.Show("ชำระสินค้าเรียบร้อยแล้ว");
+                    showReceipt show = new showReceipt(recNum);
+                    show.MdiParent = home;
+                    show.Show();
                 }
                 else
                 {

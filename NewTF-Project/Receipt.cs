@@ -17,7 +17,7 @@ namespace NewTF_Project
         public int rec_id { get; set; }
         public double rec_sum { get; set; }
         public string rec_number { get; set; }
-        public Nullable<System.DateTime> rec_date { get; set; }
+        public System.DateTime rec_date { get; set; }
         public int rec_amount { get; set; }
         public string employee_ID { get; set; }
         public string member_ID { get; set; }
