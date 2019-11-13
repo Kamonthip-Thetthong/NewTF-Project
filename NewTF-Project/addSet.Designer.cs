@@ -133,7 +133,7 @@
             // 
             // productNewBindingSource
             // 
-            this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
+//            this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
             // 
             // label1
             // 

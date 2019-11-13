@@ -15,11 +15,13 @@ namespace NewTF_Project
     public partial class Compose
     {
         public int compose_id { get; set; }
-        public Nullable<int> product_id { get; set; }
-        public Nullable<int> set_id { get; set; }
+        public string product_id { get; set; }
+        public string set_ID { get; set; }
         public Nullable<int> product_amount { get; set; }
     
         public virtual ProductNew ProductNew { get; set; }
+        public virtual ProductNew ProductNew1 { get; set; }
         public virtual ProductSet ProductSet { get; set; }
+        public virtual ProductSet ProductSet1 { get; set; }
     }
 }

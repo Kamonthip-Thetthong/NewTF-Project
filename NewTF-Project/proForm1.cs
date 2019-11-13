@@ -33,13 +33,13 @@ namespace NewTF_Project
             label2.Left = (this.Width - label2.Width) / 2;
 
             string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
 
             var result = context.ProductNews
-                .Where(p => p.product_id == id)
+                .Where(p => p.product_id == str)
                 .First();
 
-            label8.Text = result.product_id.ToString();
+            label8.Text = result.product_id;
             label9.Text = result.product_name.ToString();
             label10.Text = result.product_detail.ToString();
             label11.Text = result.product_price.ToString();
@@ -90,7 +90,7 @@ namespace NewTF_Project
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = context.ProductNews
-                .Where(p => p.product_id.ToString().Contains(textBox1.Text) ||
+                .Where(p => p.product_id.Contains(textBox1.Text) ||
                 p.product_name.ToString().Contains(textBox1.Text) ||
                 p.product_detail.ToString().Contains(textBox1.Text) ||
                 p.product_type.ToString().Contains(textBox1.Text))
@@ -117,7 +117,7 @@ namespace NewTF_Project
         {
             string data = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             var result = context.ProductNews
-                .Where(p => p.product_id.ToString() == data)
+                .Where(p => p.product_id == data)
                 .First();
 
             DialogResult dialogResult = MessageBox.Show("คุณต้องการลบสินค้านี้ออก ใช่หรือไม่?", "ยืนยันการไล่ออก", MessageBoxButtons.YesNo);
@@ -134,13 +134,13 @@ namespace NewTF_Project
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
 
             var result = context.ProductNews
-                .Where(p => p.product_id == id)
+                .Where(p => p.product_id == str)
                 .First();
 
-            label8.Text = result.product_id.ToString();
+            label8.Text = result.product_id;
             label9.Text = result.product_name.ToString();
             label10.Text = result.product_detail.ToString();
             label11.Text = result.product_price.ToString();
@@ -153,13 +153,13 @@ namespace NewTF_Project
         private void DataGridView1_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
 
             var result = context.ProductNews
-                .Where(p => p.product_id == id)
+                .Where(p => p.product_id == str)
                 .First();
 
-            label8.Text = result.product_id.ToString();
+            label8.Text = result.product_id;
             label9.Text = result.product_name.ToString();
             label10.Text = result.product_detail.ToString();
             label11.Text = result.product_price.ToString();
@@ -178,17 +178,17 @@ namespace NewTF_Project
         private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label26.Text = result.set_id.ToString();
+            label26.Text = result.set_ID;
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             foreach(var com in coms)
@@ -212,19 +212,19 @@ namespace NewTF_Project
         private void DataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label26.Text = result.set_id.ToString();
+            label26.Text = result.set_ID.ToString();
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
             listView1.Items.Clear();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             foreach (var com in coms)
@@ -247,17 +247,17 @@ namespace NewTF_Project
         private void DataGridView3_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label26.Text = result.set_id.ToString();
+            label26.Text = result.set_ID;
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             listView1.Items.Clear();
@@ -281,17 +281,17 @@ namespace NewTF_Project
         private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label23.Text = result.set_id.ToString();
+            label23.Text = result.set_ID;
             label24.Text = result.set_name;
             label25.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             listView2.Items.Clear();
@@ -315,17 +315,17 @@ namespace NewTF_Project
         private void DataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label23.Text = result.set_id.ToString();
+            label23.Text = result.set_ID;
             label24.Text = result.set_name;
             label25.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             listView2.Items.Clear();
@@ -348,10 +348,10 @@ namespace NewTF_Project
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(label23.Text);
+            string id = label23.Text;
 
             var del = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == id)
                 .First();
 
             del.set_isDel = 1;
@@ -365,10 +365,10 @@ namespace NewTF_Project
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(label26.Text);
+            string id = label26.Text;
 
             var del = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == id)
                 .First();
 
             del.set_isDel = 1;
@@ -405,7 +405,7 @@ namespace NewTF_Project
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            printBarcode print = new printBarcode(int.Parse(label8.Text));
+            printBarcode print = new printBarcode(label8.Text);
             print.MdiParent = home;
             print.Show();
         }

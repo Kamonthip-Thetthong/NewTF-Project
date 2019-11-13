@@ -16,8 +16,8 @@ namespace NewTF_Project
     public partial class printBarcode : Form
     {
         apd621_60011212001Entities context = new apd621_60011212001Entities();
-        int id;
-        public printBarcode(int id)
+        string id;
+        public printBarcode(string id)
         {
             this.id = id;
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace NewTF_Project
                 .Where(p => p.product_id == id)
                 .First();
 
-            label8.Text = result.product_id.ToString();
+            label8.Text = result.product_id;
             label9.Text = result.product_name;
             label10.Text = result.product_detail;
             label14.Text = result.product_type;

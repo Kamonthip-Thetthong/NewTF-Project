@@ -18,10 +18,11 @@ namespace NewTF_Project
         public Member()
         {
             this.Receipts = new HashSet<Receipt>();
+            this.Receipts1 = new HashSet<Receipt>();
         }
     
         public string member_name { get; set; }
-        public int member_id { get; set; }
+        public string member_ID { get; set; }
         public string member_addr { get; set; }
         public string member_tel { get; set; }
         public byte[] member_picture { get; set; }
@@ -33,5 +34,7 @@ namespace NewTF_Project
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Receipt> Receipts1 { get; set; }
     }
 }

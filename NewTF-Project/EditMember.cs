@@ -22,7 +22,7 @@ namespace NewTF_Project
             this.ed = data;
             this.mbForm = memberForm1;
             member = context.Members
-                .Where(s => s.member_id.ToString() == ed).First();
+                .Where(s => s.member_ID == ed).First();
             InitializeComponent();
         }
 

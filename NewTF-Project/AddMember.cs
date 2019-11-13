@@ -23,8 +23,24 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            var result = context.Members
+                .OrderByDescending(m => m.member_ID).First();
+            int id = int.Parse(result.member_ID);
+            int newId = id + 1;
+            string newMemId = "";
+            if(newId < 10)
+            {
+                newMemId = string.Format("00{0}", newId);
+            }else if(newId < 100)
+            {
+                newMemId = string.Format("0{00}", newId);
+            }
+            else
+            {
+                newMemId = string.Format("{000}", newId);
+            }
                 Member member = new Member();
+                member.member_ID = newMemId;
                 member.member_name = textBox1.Text;
                 member.member_tel = textBox2.Text;
                 member.member_addr = textBox3.Text;

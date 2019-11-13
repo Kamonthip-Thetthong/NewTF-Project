@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc707a32cf434b009de2b19055fdddd3" Name="Diagram1">
+        <EntityTypeShape EntityType="apd621_60011212001Model.Compose" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Employee" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Member" Width="1.5" PointX="9.875" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.ProductNew" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.ProductSet" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="apd621_60011212001Model.Receipt" Width="1.5" PointX="7.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductNew" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductNew1" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductSet" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Compose_ProductSet1" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Employee1" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_Member1" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductNew" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductNew1" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductSet" ManuallyRouted="false" />
+        <AssociationConnector Association="apd621_60011212001Model.FK_Receipt_ProductSet1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

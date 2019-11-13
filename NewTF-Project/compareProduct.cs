@@ -44,11 +44,11 @@ namespace NewTF_Project
                 }
 
                 
-                int pid = int.Parse(textBox2.Text);
+                string pid = textBox2.Text;
                 var myShop = context.ProductNews
                     .Where(p => p.product_id == pid)
                     .First();
-                label7.Text = myShop.product_id.ToString();
+                label7.Text = myShop.product_id;
                 label8.Text = myShop.product_name;
                 label9.Text = myShop.product_price.ToString();
                 pictureBox1.Load(myShop.product_pic);

@@ -18,9 +18,10 @@ namespace NewTF_Project
         public Employee()
         {
             this.Receipts = new HashSet<Receipt>();
+            this.Receipts1 = new HashSet<Receipt>();
         }
     
-        public int employee_id { get; set; }
+        public string employee_ID { get; set; }
         public string employee_name { get; set; }
         public string employee_addr { get; set; }
         public Nullable<double> employee_salary { get; set; }
@@ -34,5 +35,7 @@ namespace NewTF_Project
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Receipt> Receipts1 { get; set; }
     }
 }

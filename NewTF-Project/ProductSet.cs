@@ -18,10 +18,12 @@ namespace NewTF_Project
         public ProductSet()
         {
             this.Composes = new HashSet<Compose>();
+            this.Composes1 = new HashSet<Compose>();
             this.Receipts = new HashSet<Receipt>();
+            this.Receipts1 = new HashSet<Receipt>();
         }
     
-        public int set_id { get; set; }
+        public string set_ID { get; set; }
         public string set_name { get; set; }
         public Nullable<bool> set_status { get; set; }
         public Nullable<double> set_price { get; set; }
@@ -30,6 +32,10 @@ namespace NewTF_Project
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compose> Composes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Compose> Composes1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Receipt> Receipts1 { get; set; }
     }
 }

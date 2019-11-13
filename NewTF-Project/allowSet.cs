@@ -21,17 +21,17 @@ namespace NewTF_Project
         private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label26.Text = result.set_id.ToString();
+            label26.Text = result.set_ID;
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             foreach (var com in coms)
@@ -42,7 +42,7 @@ namespace NewTF_Project
 
                 string[] item = new string[]
                 {
-                    product.product_id.ToString(),
+                    product.product_id,
                     product.product_name,
                     com.product_amount.ToString()
                 };
@@ -64,10 +64,10 @@ namespace NewTF_Project
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(label26.Text);
+            string id = label26.Text;
 
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == id)
                 .First();
 
             result.set_status = true;
@@ -95,17 +95,17 @@ namespace NewTF_Project
         private void DataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string str = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
+            //int id = int.Parse(str);
             var result = context.ProductSets
-                .Where(p => p.set_id == id)
+                .Where(p => p.set_ID == str)
                 .First();
 
-            label26.Text = result.set_id.ToString();
+            label26.Text = result.set_ID;
             label28.Text = result.set_name;
             label30.Text = result.set_price.ToString();
 
             var coms = context.Composes
-                .Where(c => c.set_id == result.set_id)
+                .Where(c => c.set_ID == result.set_ID)
                 .ToList();
 
             listView1.Items.Clear();
@@ -117,7 +117,7 @@ namespace NewTF_Project
 
                 string[] item = new string[]
                 {
-                    product.product_id.ToString(),
+                    product.product_id,
                     product.product_name,
                     com.product_amount.ToString()
                 };

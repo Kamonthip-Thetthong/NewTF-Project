@@ -15,18 +15,22 @@ namespace NewTF_Project
     public partial class Receipt
     {
         public int rec_id { get; set; }
-        public Nullable<double> rec_sum { get; set; }
-        public int rec_number { get; set; }
+        public double rec_sum { get; set; }
+        public string rec_number { get; set; }
         public Nullable<System.DateTime> rec_date { get; set; }
-        public Nullable<int> rec_amount { get; set; }
-        public Nullable<int> employee_id { get; set; }
-        public Nullable<int> member_id { get; set; }
-        public Nullable<int> product_id { get; set; }
-        public Nullable<int> set_id { get; set; }
+        public int rec_amount { get; set; }
+        public string employee_ID { get; set; }
+        public string member_ID { get; set; }
+        public string product_ID { get; set; }
+        public string set_ID { get; set; }
     
         public virtual Employee Employee { get; set; }
+        public virtual Employee Employee1 { get; set; }
         public virtual Member Member { get; set; }
+        public virtual Member Member1 { get; set; }
         public virtual ProductNew ProductNew { get; set; }
+        public virtual ProductNew ProductNew1 { get; set; }
         public virtual ProductSet ProductSet { get; set; }
+        public virtual ProductSet ProductSet1 { get; set; }
     }
 }

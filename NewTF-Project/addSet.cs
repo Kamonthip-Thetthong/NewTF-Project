@@ -33,15 +33,14 @@ namespace NewTF_Project
         private void Button1_Click(object sender, EventArgs e)
         {
             string str = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            int id = int.Parse(str);
 
             var result = context.ProductNews
-                .Where(p => p.product_id == id)
+                .Where(p => p.product_id == str)
                 .First();
 
             string[] item = new string[]
             {
-                result.product_id.ToString(),
+                result.product_id,
                 result.product_name,
                 numericUpDown1.Value.ToString()
             };
@@ -63,7 +62,25 @@ namespace NewTF_Project
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            string setId = context.ProductSets
+                .Select(p => new { p.set_ID })
+                .Max(m => m.set_ID);
+            int Id = int.Parse(setId);
+            int newId = Id + 1;
+            string newSetId = newId.ToString();
+            //if(newId < 10)
+            //{
+            //    newSetId = string.Format("00{0}", newId);
+            //}else if(newId < 100)
+            //{
+            //    newSetId = string.Format("0{00}", newId);
+            //}
+            //else
+            //{
+            //    newSetId = string.Format("0{00}", newId);
+            //}
             ProductSet set = new ProductSet();
+            set.set_ID = newSetId;
             set.set_name = textBox2.Text;
             set.set_status = false;
             set.set_price = Convert.ToDouble(textBox3.Text);
@@ -72,15 +89,15 @@ namespace NewTF_Project
             context.ProductSets.Add(set);
             context.SaveChanges();
 
-            var result = context.ProductSets
-                .Select(p => new { p.set_id })
-                .Max(m => m.set_id);
+            //var result = context.ProductSets
+            //    .Select(p => new { p.set_id })
+            //    .Max(m => m.set_id);
             
             for (int i = listView1.Items.Count - 1; i >= 0; i--)
             {
                 Compose com = new Compose();
-                com.set_id = result;
-                com.product_id = int.Parse(listView1.Items[i].SubItems[0].Text);
+                com.set_ID = newSetId;
+                com.product_id =listView1.Items[i].SubItems[0].Text;
                 com.product_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
                 context.Composes.Add(com);
                 context.SaveChanges();

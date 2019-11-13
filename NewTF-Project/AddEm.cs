@@ -57,7 +57,24 @@ namespace NewTF_Project
             }
             catch
             {
+                var result = context.Employees
+                    .OrderByDescending(m => m.employee_ID).First();
+                int emId = int.Parse(result.employee_ID);
+                int newId = emId + 1;
+                string newEmId = "";
                 Employee newEm = new Employee();
+                if(newId < 10)
+                {
+                    newEmId = string.Format("00{0}", newId);
+                }else if(newId < 100)
+                {
+                    newEmId = string.Format("0{00}", newId);
+                }
+                else
+                {
+                    newEmId = string.Format("{000}", newId);
+                }
+                newEm.employee_ID = newEmId.ToString();
                 newEm.employee_name = textBox1.Text;
                 newEm.employee_addr = textBox2.Text;
                 newEm.employee_tel = textBox3.Text;

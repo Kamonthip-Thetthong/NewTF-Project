@@ -21,8 +21,10 @@ namespace NewTF_Project
         int price = 0;
         int clickIn = 1;
         apd621_60011212001Entities context = new apd621_60011212001Entities();
-        public sellProduct()
+        Employee user;
+        public sellProduct(Employee user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -37,7 +39,7 @@ namespace NewTF_Project
                 .Where(p => p.product_status != 0)
                 .ToList();
 
-            productSetBindingSource.DataSource = context.ProductSets
+            productSetBindingSource1.DataSource = context.ProductSets
                 .Where(p => p.set_isDel == 0 && p.set_status == true)
                 .ToList();
             webcams = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -45,20 +47,20 @@ namespace NewTF_Project
             {
                 comboBox1.Items.Add(webcam.Name);
             }
-            
+
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             productNewBindingSource.DataSource = context.ProductNews
                 .Where(p => p.product_status != 0 && (
-                p.product_id.ToString().Contains(textBox1.Text) ||
+                p.product_id.Contains(textBox1.Text) ||
                 p.product_name.Contains(textBox1.Text) ||
                 p.product_detail.Contains(textBox1.Text) ||
                 p.product_type.Contains(textBox1.Text)))
                 .ToList();
-            productSetBindingSource.DataSource = context.ProductSets
-                .Where(p => p.set_id.ToString().Contains(textBox1.Text) ||
+            productSetBindingSource1.DataSource = context.ProductSets
+                .Where(p => p.set_ID.Contains(textBox1.Text) ||
                 p.set_name.Contains(textBox1.Text) &&
                 p.set_status == true && p.set_isDel == 0)
                 .ToList();
@@ -103,7 +105,7 @@ namespace NewTF_Project
                 var result = reader.Decode(capture);
                 if (result != null)
                 {
-                    int id = int.Parse(result.Text);
+                    string id = result.Text;
                     try
                     {
                         if( result.Text.Length == 5)
@@ -111,12 +113,12 @@ namespace NewTF_Project
                             productNewBindingSource.DataSource = context.ProductNews
                                 .Where(p => p.product_id == id)
                                 .First();
-                            productSetBindingSource.Clear();
+                            productSetBindingSource1.Clear();
                         }
                         else if(result.Text.Length == 6)
                         {
-                            productSetBindingSource.DataSource = context.ProductSets
-                                .Where(p => p.set_id == id)
+                            productSetBindingSource1.DataSource = context.ProductSets
+                                .Where(p => p.set_ID == id)
                                 .First();
                             productNewBindingSource.Clear();
                         }
@@ -157,12 +159,12 @@ namespace NewTF_Project
                 {
                     str = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
                 }
-                int id = int.Parse(str);
+                //int id = int.Parse(str);
                 
                 if(str.Length == 5)
                 {
                     var result = context.ProductNews
-                        .Where(p => p.product_id == id)
+                        .Where(p => p.product_id == str)
                         .First();
                     if(result.product_amount >= num)
                     {
@@ -185,10 +187,10 @@ namespace NewTF_Project
                 }else if(str.Length == 6)
                 {
                     var result = context.ProductSets
-                        .Where(p => p.set_id == id)
+                        .Where(p => p.set_ID == str)
                         .First();
                     var sets = context.Composes
-                        .Where(c => c.set_id == result.set_id)
+                        .Where(c => c.set_ID == result.set_ID)
                         .ToList();
 
                     bool moreThanStore = false;
@@ -235,7 +237,324 @@ namespace NewTF_Project
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var result = context.Receipts
+                    .OrderByDescending(r => r.rec_number)
+                    .First();
+                // Gen rec_number
+                string recNum = "";
+                int oldNum = int.Parse(result.rec_number);
+                int newNum = oldNum + 1;
+                if(newNum < 10)
+                {
+                    recNum = string.Format("000{0}", newNum);
+                }else if(newNum < 100)
+                {
+                    recNum = string.Format("00{00}", newNum);
+                }else if(newNum < 1000)
+                {
+                    recNum = string.Format("0{000}", newNum);
+                }
+                else
+                {
+                    recNum = newNum.ToString();
+                }
+                // check Product Amount
+                bool remain = true;
+                Dictionary<string, int> amount = new Dictionary<string, int>();
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    string id = listView1.Items[i].SubItems[0].Text;
+                    if(id.Length == 5)
+                    {
+                        var pro = context.ProductNews
+                            .Where(p => p.product_id == id)
+                            .First();
+                        bool haveKey = false;
+                        foreach(KeyValuePair<string, int> kvp in amount)
+                        {
+                            if(kvp.Key == pro.product_id)
+                            {
+                                haveKey = true;
+                            }
+                        }
 
+                        if(haveKey == false)
+                        {
+                            amount.Add(pro.product_id, pro.product_amount);
+                        }
+                        else
+                        {
+                            amount[pro.product_id] -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                        }
+                        if (amount[pro.product_id] < int.Parse(listView1.Items[i].SubItems[2].Text))
+                        {
+                            remain = false;
+                            
+                        }
+                    }else
+                    {
+                        var coms = context.Composes
+                            .Where(c => c.set_ID == id)
+                            .ToList();
+                        foreach(var pro in coms)
+                        {
+                            bool haveKey = false;
+                            foreach (KeyValuePair<string, int> kvp in amount)
+                            {
+                                if (kvp.Key == pro.product_id)
+                                {
+                                    haveKey = true;
+                                }
+                            }
+
+                            if (haveKey == false)
+                            {
+                                amount.Add(pro.product_id, pro.product_amount.GetValueOrDefault(1));
+                            }
+                            else
+                            {
+                                amount[pro.product_id] -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                            }
+                            if (amount[pro.product_id] < int.Parse(listView1.Items[i].SubItems[2].Text))
+                            {
+                                remain = false;
+                                
+                            }
+                        }
+                    }
+                }
+
+                // Product is still in store
+                if (remain == true)
+                {
+                    for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                    {
+                        string number = listView1.Items[i].SubItems[0].Text;
+                        Receipt rec = new Receipt();
+                        if (number.Length == 5)
+                        {
+                            rec.rec_number = recNum;
+                            rec.rec_date = DateTime.Now;
+                            rec.rec_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
+                            rec.employee_ID = user.employee_ID;
+                            if (radioButton1.Checked == true)
+                            {
+                                rec.member_ID = "007";
+                            }
+                            else
+                            {
+                                var mb = context.Members
+                                    .Where(m => m.member_name == comboBox2.Text)
+                                    .First();
+                                rec.member_ID = mb.member_ID;
+                            }
+                            rec.product_ID = listView1.Items[i].SubItems[0].Text;
+                            rec.set_ID = "100010";
+                            rec.rec_sum = double.Parse(listView1.Items[i].SubItems[3].Text);
+                            context.Receipts.Add(rec);
+                            context.SaveChanges();
+
+                            var dis = context.ProductNews
+                                .Where(p => p.product_id == rec.product_ID)
+                                .First();
+                            dis.product_amount -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            rec.rec_number = recNum;
+                            rec.rec_date = DateTime.Now;
+                            rec.rec_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
+                            rec.employee_ID = user.employee_ID;
+                            if (radioButton1.Checked == true)
+                            {
+                                rec.member_ID = "007";
+                            }
+                            else
+                            {
+                                var mb = context.Members
+                                    .Where(m => m.member_name == comboBox2.Text)
+                                    .First();
+                                rec.member_ID = mb.member_ID;
+                            }
+                            rec.product_ID = "-1";
+                            rec.set_ID = listView1.Items[i].SubItems[0].Text;
+                            rec.rec_sum = double.Parse(listView1.Items[i].SubItems[3].Text);
+                            context.Receipts.Add(rec);
+                            context.SaveChanges();
+
+                            var coms = context.Composes
+                                .Where(c => c.set_ID == rec.set_ID)
+                                .ToList();
+                            foreach (var com in coms)
+                            {
+                                var pd = context.ProductNews
+                                    .Where(p => p.product_id == com.product_id)
+                                    .First();
+                                pd.product_amount -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                                context.SaveChanges();
+                            }
+                        }
+                    }
+                    MessageBox.Show("ชำระสินค้าเรียบร้อยแล้ว");
+                }
+                else
+                {
+                    MessageBox.Show("สินค้ามีจำนวนไม่พอ!!!");
+                }
+            }
+            catch
+            {
+                string recNum = "001";
+                
+                // check Product Amount
+                bool remain = true;
+                Dictionary<string, int> amount = new Dictionary<string, int>();
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    string id = listView1.Items[i].SubItems[0].Text;
+                    if (id.Length == 5)
+                    {
+                        var pro = context.ProductNews
+                            .Where(p => p.product_id == id)
+                            .First();
+                        bool haveKey = false;
+                        foreach (KeyValuePair<string, int> kvp in amount)
+                        {
+                            if (kvp.Key == pro.product_id)
+                            {
+                                haveKey = true;
+                            }
+                        }
+
+                        if (haveKey == false)
+                        {
+                            amount.Add(pro.product_id, pro.product_amount);
+                        }
+                        else
+                        {
+                            amount[pro.product_id] -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                        }
+                        if (amount[pro.product_id] < int.Parse(listView1.Items[i].SubItems[2].Text))
+                        {
+                            remain = false;
+
+                        }
+                    }
+                    else
+                    {
+                        var coms = context.Composes
+                            .Where(c => c.set_ID == id)
+                            .ToList();
+                        foreach (var pro in coms)
+                        {
+                            bool haveKey = false;
+                            foreach (KeyValuePair<string, int> kvp in amount)
+                            {
+                                if (kvp.Key == pro.product_id)
+                                {
+                                    haveKey = true;
+                                }
+                            }
+
+                            if (haveKey == false)
+                            {
+                                amount.Add(pro.product_id, pro.product_amount.GetValueOrDefault(1));
+                            }
+                            else
+                            {
+                                amount[pro.product_id] -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                            }
+                            if (amount[pro.product_id] < int.Parse(listView1.Items[i].SubItems[2].Text))
+                            {
+                                remain = false;
+
+                            }
+                        }
+                    }
+                }
+
+                // Product is still in store
+                if (remain == true)
+                {
+                    for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                    {
+                        string number = listView1.Items[i].SubItems[0].Text;
+                        Receipt rec = new Receipt();
+                        if (number.Length == 5)
+                        {
+                            rec.rec_number = recNum;
+                            rec.rec_date = DateTime.Now;
+                            rec.rec_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
+                            rec.employee_ID = user.employee_ID;
+                            if (radioButton1.Checked == true)
+                            {
+                                rec.member_ID = "007";
+                            }
+                            else
+                            {
+                                var mb = context.Members
+                                    .Where(m => m.member_name == comboBox2.Text)
+                                    .First();
+                                rec.member_ID = mb.member_ID;
+                            }
+                            rec.product_ID = listView1.Items[i].SubItems[0].Text;
+                            rec.set_ID = "100010";
+                            rec.rec_sum = double.Parse(listView1.Items[i].SubItems[3].Text);
+                            context.Receipts.Add(rec);
+                            context.SaveChanges();
+
+                            var dis = context.ProductNews
+                                .Where(p => p.product_id == rec.product_ID)
+                                .First();
+                            dis.product_amount -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            rec.rec_number = recNum;
+                            rec.rec_date = DateTime.Now;
+                            rec.rec_amount = int.Parse(listView1.Items[i].SubItems[2].Text);
+                            rec.employee_ID = user.employee_ID;
+                            if (radioButton1.Checked == true)
+                            {
+                                rec.member_ID = "007";
+                            }
+                            else
+                            {
+                                var mb = context.Members
+                                    .Where(m => m.member_name == comboBox2.Text)
+                                    .First();
+                                rec.member_ID = mb.member_ID;
+                            }
+                            rec.product_ID = "-1";
+                            rec.set_ID = listView1.Items[i].SubItems[0].Text;
+                            rec.rec_sum = double.Parse(listView1.Items[i].SubItems[3].Text);
+                            context.Receipts.Add(rec);
+                            context.SaveChanges();
+
+                            var coms = context.Composes
+                                .Where(c => c.set_ID == rec.set_ID)
+                                .ToList();
+                            foreach(var com in coms)
+                            {
+                                var pd = context.ProductNews
+                                    .Where(p => p.product_id == com.product_id)
+                                    .First();
+                                pd.product_amount -= int.Parse(listView1.Items[i].SubItems[2].Text);
+                                context.SaveChanges();
+                            }
+                        }
+                    }
+                    MessageBox.Show("ชำระสินค้าเรียบร้อยแล้ว");
+                }
+                else
+                {
+                    MessageBox.Show("สินค้ามีจำนวนไม่พอ!!!");
+                }
+            }
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -293,6 +612,20 @@ namespace NewTF_Project
                     label6.Text = price.ToString();
                     listView1.Items[i].Remove();
                 }
+            }
+        }
+
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton2.Checked == true)
+            {
+                MemberBindingSource1.DataSource = context.Members
+                    .Where(m => m.member_status == 1)
+                    .ToList();
+            }
+            else
+            {
+                MemberBindingSource1.DataSource = "";
             }
         }
     }

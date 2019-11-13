@@ -39,7 +39,7 @@ namespace NewTF_Project
             bindingSource1.EndEdit();
 
             int ed = context.SaveChanges();
-            int id = int.Parse(textBox2.Text);
+            string id = textBox2.Text;
             var result = context.ProductNews
                 .Where(p => p.product_id == id)
                 .First();

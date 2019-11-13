@@ -78,7 +78,7 @@ namespace NewTF_Project
         {
             try
             {
-                int id = int.Parse(textBox2.Text);
+                string id = textBox2.Text;
                 var result = context.ProductNews
                     .Where(p => p.product_id == id)
                     .First();
@@ -108,7 +108,7 @@ namespace NewTF_Project
             {
                 ProductNew product = new ProductNew();
 
-                product.product_id = int.Parse(textBox2.Text);
+                product.product_id = textBox2.Text;
                 product.product_name = textBox3.Text;
                 product.product_detail = textBox4.Text;
                 product.product_type = textBox5.Text;

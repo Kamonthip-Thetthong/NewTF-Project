@@ -127,7 +127,7 @@
       <DependentUpon>compareProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Compose.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="editEm.cs">
       <SubType>Form</SubType>
@@ -160,7 +160,7 @@
       <DependentUpon>AddEm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -176,7 +176,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberDetail.cs">
       <SubType>Form</SubType>
@@ -197,10 +197,10 @@
       <DependentUpon>printBarcode.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductNew.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSet.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="productsReport.cs">
       <AutoGen>True</AutoGen>
@@ -217,7 +217,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipt.cs">
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
     </Compile>
     <Compile Include="resultGetProduct.cs" />
     <Compile Include="sellProduct.cs">
@@ -232,20 +232,26 @@
     <Compile Include="showPro.Designer.cs">
       <DependentUpon>showPro.cs</DependentUpon>
     </Compile>
-    <Compile Include="TFShopDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TFShopDB.Context.tt</DependentUpon>
+    <Compile Include="showReceipt.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TFShopDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TFShopDB.tt</DependentUpon>
+    <Compile Include="showReceipt.Designer.cs">
+      <DependentUpon>showReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="TFShopDB.Designer.cs">
+    <Compile Include="TIF-Shop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TFShopDB.edmx</DependentUpon>
+      <DependentUpon>TIF-Shop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIF-Shop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TIF-Shop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIF-Shop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TIF-Shop.edmx</DependentUpon>
     </Compile>
     <Compile Include="updateToService.cs" />
     <Compile Include="viewReportProduct.cs">
@@ -322,6 +328,9 @@
     <EmbeddedResource Include="showPro.resx">
       <DependentUpon>showPro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="showReceipt.resx">
+      <DependentUpon>showReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewReportProduct.resx">
       <DependentUpon>viewReportProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,12 +348,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="TFShopDB.edmx">
+    <EntityDeploy Include="TIF-Shop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TFShopDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>TIF-Shop.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TFShopDB.edmx.diagram">
-      <DependentUpon>TFShopDB.edmx</DependentUpon>
+    <None Include="TIF-Shop.edmx.diagram">
+      <DependentUpon>TIF-Shop.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -354,20 +363,22 @@
     <None Include="Resources\monitor-s2719h-campaign-hero-504x350-ng.png" />
     <None Include="Resources\74585638_939708799730657_382264244101447680_n.jpg" />
     <None Include="Resources\TIF.png" />
-    <Content Include="TFShopDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TFShopDB.Context.cs</LastGenOutput>
-      <DependentUpon>TFShopDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="TFShopDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TFShopDB.edmx</DependentUpon>
-      <LastGenOutput>TFShopDB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TIF-Shop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TIF-Shop.edmx</DependentUpon>
+      <LastGenOutput>TIF-Shop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TIF-Shop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TIF-Shop.edmx</DependentUpon>
+      <LastGenOutput>TIF-Shop.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

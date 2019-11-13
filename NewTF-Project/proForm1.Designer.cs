@@ -97,11 +97,12 @@
             this.productamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.setidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.setIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -118,6 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productNewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -673,10 +675,10 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.setidDataGridViewTextBoxColumn,
+            this.setIDDataGridViewTextBoxColumn,
             this.setnameDataGridViewTextBoxColumn,
             this.setpriceDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.productSetBindingSource;
+            this.dataGridView2.DataSource = this.productSetBindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(7, 45);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
@@ -867,10 +869,10 @@
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.Column1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView3.DataSource = this.productSetBindingSource;
+            this.dataGridView3.DataSource = this.productSetBindingSource1;
             this.dataGridView3.Location = new System.Drawing.Point(7, 44);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
@@ -934,57 +936,67 @@
             // 
             this.productNewBindingSource.DataSource = typeof(NewTF_Project.ProductNew);
             // 
-            // setidDataGridViewTextBoxColumn
-            // 
-            this.setidDataGridViewTextBoxColumn.DataPropertyName = "set_id";
-            this.setidDataGridViewTextBoxColumn.HeaderText = "set_id";
-            this.setidDataGridViewTextBoxColumn.Name = "setidDataGridViewTextBoxColumn";
-            this.setidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.setidDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // setnameDataGridViewTextBoxColumn
-            // 
-            this.setnameDataGridViewTextBoxColumn.DataPropertyName = "set_name";
-            this.setnameDataGridViewTextBoxColumn.HeaderText = "ชื่อเซ็ต";
-            this.setnameDataGridViewTextBoxColumn.Name = "setnameDataGridViewTextBoxColumn";
-            this.setnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.setnameDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // setpriceDataGridViewTextBoxColumn
-            // 
-            this.setpriceDataGridViewTextBoxColumn.DataPropertyName = "set_price";
-            this.setpriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
-            this.setpriceDataGridViewTextBoxColumn.Name = "setpriceDataGridViewTextBoxColumn";
-            this.setpriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.setpriceDataGridViewTextBoxColumn.Width = 150;
-            // 
             // productSetBindingSource
             // 
             this.productSetBindingSource.DataSource = typeof(NewTF_Project.ProductSet);
             // 
-            // dataGridViewTextBoxColumn1
+            // productSetBindingSource1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "set_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "set_id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.productSetBindingSource1.DataSource = typeof(NewTF_Project.ProductSet);
+            // 
+            // setIDDataGridViewTextBoxColumn
+            // 
+            this.setIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.setIDDataGridViewTextBoxColumn.DataPropertyName = "set_ID";
+            this.setIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.setIDDataGridViewTextBoxColumn.Name = "setIDDataGridViewTextBoxColumn";
+            this.setIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.setIDDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // setnameDataGridViewTextBoxColumn
+            // 
+            this.setnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.setnameDataGridViewTextBoxColumn.DataPropertyName = "set_name";
+            this.setnameDataGridViewTextBoxColumn.HeaderText = "ชื่อเซ็ต";
+            this.setnameDataGridViewTextBoxColumn.Name = "setnameDataGridViewTextBoxColumn";
+            this.setnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.setnameDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // setpriceDataGridViewTextBoxColumn
+            // 
+            this.setpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.setpriceDataGridViewTextBoxColumn.DataPropertyName = "set_price";
+            this.setpriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
+            this.setpriceDataGridViewTextBoxColumn.Name = "setpriceDataGridViewTextBoxColumn";
+            this.setpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.setpriceDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.DataPropertyName = "set_ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 54;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "set_name";
             this.dataGridViewTextBoxColumn2.HeaderText = "ชื่อเซ็ต";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 300;
+            this.dataGridViewTextBoxColumn2.Width = 88;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "set_price";
             this.dataGridViewTextBoxColumn3.HeaderText = "ราคา";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.dataGridViewTextBoxColumn3.Width = 74;
             // 
             // proForm1
             // 
@@ -1018,6 +1030,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productNewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1067,9 +1080,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource productSetBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn setidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn setnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn setpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1077,9 +1087,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -1100,5 +1107,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn setIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn setnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn setpriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productSetBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

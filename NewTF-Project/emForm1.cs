@@ -36,7 +36,7 @@ namespace NewTF_Project
                 .Where(s => s.employee_user == name)
                 .First();
 
-            label3.Text = "ID : " + result.employee_id.ToString();
+            label3.Text = "ID : " + result.employee_ID;
             label4.Text = "ชื่อ-สกุล : " + result.employee_name.ToString();
             label5.Text = "ที่อยู่ : " + result.employee_addr.ToString();
             label6.Text = "ตำแหน่ง : " + result.employee_position.ToString();
@@ -124,7 +124,7 @@ namespace NewTF_Project
                 .Where(s => s.employee_user == name)
                 .First();
 
-            label3.Text = "ID : " + result.employee_id.ToString();
+            label3.Text = "ID : " + result.employee_ID;
             label4.Text = "ชื่อ-สกุล : " + result.employee_name.ToString();
             label5.Text = "ที่อยู่ : " + result.employee_addr.ToString();
             label6.Text = "ตำแหน่ง : " + result.employee_position.ToString();

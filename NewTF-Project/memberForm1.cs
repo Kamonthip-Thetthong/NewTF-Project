@@ -63,7 +63,7 @@ namespace NewTF_Project
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 var toDel = context.Members
-                    .Where(s => s.member_id.ToString() == id)
+                    .Where(s => s.member_ID == id)
                     .First(); 
 
                 //context.Members.Remove(toDel);
