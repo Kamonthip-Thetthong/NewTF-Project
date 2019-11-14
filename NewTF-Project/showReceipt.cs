@@ -50,7 +50,7 @@ namespace NewTF_Project
                 .Tables["NewTF_Project_Receipt"]
                 .SetDataSource(recs);
 
-            recReport1.SetParameterValue("recNember", recNumber);
+            recReport1.SetParameterValue("recNumber", recNumber);
 
             crystalReportViewer1.ReportSource = recReport1;
             crystalReportViewer1.Show();

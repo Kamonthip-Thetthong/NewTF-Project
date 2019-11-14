@@ -24,13 +24,9 @@ namespace NewTF_Project
         public string product_ID { get; set; }
         public string set_ID { get; set; }
     
-        public virtual Employee Employee { get; set; }
         public virtual Employee Employee1 { get; set; }
-        public virtual Member Member { get; set; }
         public virtual Member Member1 { get; set; }
-        public virtual ProductNew ProductNew { get; set; }
         public virtual ProductNew ProductNew1 { get; set; }
-        public virtual ProductSet ProductSet { get; set; }
         public virtual ProductSet ProductSet1 { get; set; }
     }
 }

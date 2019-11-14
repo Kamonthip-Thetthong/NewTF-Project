@@ -206,5 +206,15 @@ namespace NewTF_Project
             compare.MdiParent = this;
             compare.Show();
         }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            if(user.employee_position == "เจ้าของร้าน" || user.employee_position == "พนักงานขายหน้าร้าน")
+            {
+                memExpense mem = new memExpense();
+                mem.MdiParent = this;
+                mem.Show();
+            }
+        }
     }
 }

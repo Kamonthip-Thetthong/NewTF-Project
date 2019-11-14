@@ -391,7 +391,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 87);
+            this.button1.Location = new System.Drawing.Point(358, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 46);
             this.button1.TabIndex = 41;
@@ -402,14 +402,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 172);
+            this.comboBox1.Location = new System.Drawing.Point(95, 160);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(257, 28);
             this.comboBox1.TabIndex = 40;
             // 
             // videoSourcePlayer1
             // 
-            this.videoSourcePlayer1.Location = new System.Drawing.Point(95, 52);
+            this.videoSourcePlayer1.Location = new System.Drawing.Point(95, 40);
             this.videoSourcePlayer1.Name = "videoSourcePlayer1";
             this.videoSourcePlayer1.Size = new System.Drawing.Size(257, 113);
             this.videoSourcePlayer1.TabIndex = 39;
@@ -419,7 +419,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 52);
+            this.label3.Location = new System.Drawing.Point(30, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 38;

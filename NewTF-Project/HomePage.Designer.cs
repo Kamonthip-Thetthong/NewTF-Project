@@ -37,6 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -142,6 +144,8 @@
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
@@ -169,12 +173,39 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button9.Location = new System.Drawing.Point(3, 329);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(146, 49);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "รายงานการซื้อสินค้า";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button8.Location = new System.Drawing.Point(3, 282);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(146, 49);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "รายงานรายรับ";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.Location = new System.Drawing.Point(2, 282);
+            this.button7.Location = new System.Drawing.Point(2, 398);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(146, 49);
@@ -262,5 +293,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
     }
 }

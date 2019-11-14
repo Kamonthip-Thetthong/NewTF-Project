@@ -17,24 +17,21 @@ namespace NewTF_Project
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.Receipts = new HashSet<Receipt>();
             this.Receipts1 = new HashSet<Receipt>();
         }
     
         public string employee_ID { get; set; }
         public string employee_name { get; set; }
         public string employee_addr { get; set; }
-        public Nullable<double> employee_salary { get; set; }
-        public Nullable<System.DateTime> employee_date { get; set; }
+        public double employee_salary { get; set; }
+        public System.DateTime employee_date { get; set; }
         public string employee_tel { get; set; }
         public byte[] employee_picture { get; set; }
         public string employee_position { get; set; }
         public string employee_user { get; set; }
         public string employee_pass { get; set; }
-        public Nullable<int> employee_status { get; set; }
+        public int employee_status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Receipt> Receipts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Receipt> Receipts1 { get; set; }
     }
