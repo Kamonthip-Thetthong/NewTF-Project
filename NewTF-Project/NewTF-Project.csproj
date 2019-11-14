@@ -168,6 +168,24 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="income.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="income.Designer.cs">
+      <DependentUpon>income.cs</DependentUpon>
+    </Compile>
+    <Compile Include="incomeReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>incomeReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="incomeReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>incomeReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="insertProductToService.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -310,6 +328,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="income.resx">
+      <DependentUpon>income.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="incomeReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>incomeReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="incomeReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>incomeReport2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

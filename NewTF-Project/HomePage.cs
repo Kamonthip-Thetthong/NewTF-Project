@@ -216,5 +216,15 @@ namespace NewTF_Project
                 mem.Show();
             }
         }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            if (user.employee_position == "เจ้าของร้าน")
+            {
+                income inc = new income();
+                inc.MdiParent = this;
+                inc.Show();
+            }
+        }
     }
 }

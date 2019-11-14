@@ -100,41 +100,55 @@ namespace NewTF_Project
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            var capture = videoSourcePlayer1.GetCurrentVideoFrame();
-            if(capture != null)
+            if(isOpen == true)
             {
-                BarcodeReader reader = new BarcodeReader();
-                var result = reader.Decode(capture);
-                if (result != null)
+                var capture = videoSourcePlayer1.GetCurrentVideoFrame();
+                if (capture != null)
                 {
-                    string id = result.Text;
-                    try
+                    BarcodeReader reader = new BarcodeReader();
+                    var result = reader.Decode(capture);
+                    if (result != null)
                     {
-                        if( result.Text.Length == 5)
+                        string id = result.Text;
+                        try
                         {
-                            productNewBindingSource.DataSource = context.ProductNews
-                                .Where(p => p.product_id == id)
-                                .First();
-                            productSetBindingSource1.Clear();
+                            if (result.Text.Length == 5)
+                            {
+                                productNewBindingSource.DataSource = context.ProductNews
+                                    .Where(p => p.product_id == id)
+                                    .First();
+                                productSetBindingSource1.Clear();
+                            }
+                            else if (result.Text.Length == 6)
+                            {
+                                productSetBindingSource1.DataSource = context.ProductSets
+                                    .Where(p => p.set_ID == id)
+                                    .First();
+                                productNewBindingSource.Clear();
+                            }
+                            timer1.Stop();
+                            videoSourcePlayer1.Stop();
+                            isOpen = false;
                         }
-                        else if(result.Text.Length == 6)
+                        catch
                         {
-                            productSetBindingSource1.DataSource = context.ProductSets
-                                .Where(p => p.set_ID == id)
-                                .First();
-                            productNewBindingSource.Clear();
+                            timer1.Stop();
+                            videoSourcePlayer1.Stop();
+                            isOpen = false;
+                            MessageBox.Show("ไม่พบสินค้ารหัส " + result.Text);
+
                         }
-                        timer1.Stop();
-                        videoSourcePlayer1.Stop();
-                        isOpen = false;
+
                     }
-                    catch
-                    {
-                        MessageBox.Show("ไม่พบสินค้า");
-                    }
-                    
                 }
             }
+            else
+            {
+                timer1.Stop();
+                videoSourcePlayer1.Stop();
+                isOpen = false;
+            }
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
